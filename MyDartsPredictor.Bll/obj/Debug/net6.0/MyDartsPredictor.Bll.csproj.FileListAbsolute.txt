@@ -1,0 +1,15 @@
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.csproj.AssemblyReference.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.AssemblyInfoInputs.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.AssemblyInfo.cs
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.csproj.CoreCompileInputs.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\bin\Debug\net6.0\MyDartsPredictor.Bll.deps.json
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\bin\Debug\net6.0\MyDartsPredictor.Bll.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\bin\Debug\net6.0\MyDartsPredictor.Bll.pdb
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\bin\Debug\net6.0\MyDartsPredictor.Dal.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\bin\Debug\net6.0\MyDartsPredictor.Dal.pdb
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.csproj.CopyComplete
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\refint\MyDartsPredictor.Bll.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\MyDartsPredictor.Bll.pdb
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Bll\obj\Debug\net6.0\ref\MyDartsPredictor.Bll.dll
