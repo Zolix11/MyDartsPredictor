@@ -7,7 +7,6 @@ public class AppDbContext : DbContext
     public DbSet<Tournament> Tournaments { get; set; }
     public DbSet<Games> Games { get; set; }
     public DbSet<Result> Results { get; set; }
-    public DbSet<Point> Points { get; set; }
     public DbSet<UsersInTournament> UsersInTournaments { get; set; }
     public DbSet<Prediction> Predictions { get; set; }
 
@@ -41,11 +40,30 @@ public class AppDbContext : DbContext
             .HasForeignKey(t => t.FounderUserId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        modelBuilder.Entity<Tournament>()
+            .HasMany(t => t.UsersInTournament)
+            .WithOne(u => u.Tournament)
+            .HasForeignKey(u => u.TournamentId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Tournament>()
+           .HasMany(t => t.Games)
+           .WithOne(g => g.Tournament)
+           .HasForeignKey(g => g.TournamentId)
+           .OnDelete(DeleteBehavior.Cascade);
+
+
         modelBuilder.Entity<Games>()
             .HasOne(g => g.Tournament)
             .WithMany(t => t.Games)
             .HasForeignKey(g => g.TournamentId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Games>()
+            .HasOne(g => g.Result)
+            .WithOne()
+            .HasForeignKey<Games>(g => g.ResultId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Result>()
             .HasOne(r => r.Game)
@@ -71,32 +89,15 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Point>()
-         .HasOne(p => p.User)
-         .WithMany()
-         .HasForeignKey(p => p.UserId)
-         .OnDelete(DeleteBehavior.Restrict);
-
-        modelBuilder.Entity<Point>()
-            .HasOne(p => p.Game)
-            .WithMany()
-            .HasForeignKey(p => p.GameId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-        modelBuilder.Entity<Point>()
-            .HasOne(p => p.Prediction)
-            .WithMany()
-            .HasForeignKey(p => p.PredictionId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-        modelBuilder.Entity<Point>()
-            .HasOne(p => p.Result)
-            .WithMany()
-            .HasForeignKey(p => p.ResultId)
-            .OnDelete(DeleteBehavior.Restrict);
 
         base.OnModelCreating(modelBuilder);
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+        optionsBuilder.EnableSensitiveDataLogging();
+
+    }
 
 }

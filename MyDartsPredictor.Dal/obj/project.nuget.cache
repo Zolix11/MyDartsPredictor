@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "McZoy+jvbw5KQzqaTafo5NmEcA8Qu4zatRSeXlZ54kVj91TScYpwjk6z2E4JKdCyRnKWIZ1fp63zPhpHGnGnKg==",
+  "dgSpecHash": "zx4jkILSExrm/tLYIMw5w1Cqa3LTE4m6kpBMiLbHg2HS4t9vd3sYJWdDc3dvsOAjvRuStk6Qq5CKH17Y3C1XzQ==",
   "success": true,
-  "projectFilePath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj",
+  "projectFilePath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

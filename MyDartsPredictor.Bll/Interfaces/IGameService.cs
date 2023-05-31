@@ -1,12 +1,11 @@
 ﻿using MyDartsPredictor.Bll.Dtos;
+using MyDartsPredictor.Bll.SimplifiedDtos;
 
 namespace MyDartsPredictor.Bll.Interfaces;
 
 public interface IGameService
 {
-    Task<IEnumerable<GameDto>> GetGamesByTournamentIdAsync(int tournamentId);
     Task<GameDto> GetGameByIdAsync(int gameId);
-    Task<GameDto> CreateGameAsync(GameDto gameDto);
-    Task<GameDto> UpdateGameAsync(int gameId, GameDto gameDto);
+    Task<GameDto> CreateGameAsync(GameCreate gameDto);
     Task DeleteGameAsync(int gameId);
 }

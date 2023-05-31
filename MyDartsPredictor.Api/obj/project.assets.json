@@ -6863,8 +6863,8 @@
     },
     "MyDartsPredictor.Dal/1.0.0": {
       "type": "project",
-      "path": "../MyDartsPredictor/MyDartsPredictor.Dal.csproj",
-      "msbuildProject": "../MyDartsPredictor/MyDartsPredictor.Dal.csproj"
+      "path": "../MyDartsPredictor.Dal/MyDartsPredictor.Dal.csproj",
+      "msbuildProject": "../MyDartsPredictor.Dal/MyDartsPredictor.Dal.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6914,8 +6914,8 @@
             "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Bll\\MyDartsPredictor.Bll.csproj": {
               "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Bll\\MyDartsPredictor.Bll.csproj"
             },
-            "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj": {
-              "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj"
+            "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj": {
+              "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj"
             }
           }
         }

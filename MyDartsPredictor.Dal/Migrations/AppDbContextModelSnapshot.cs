@@ -115,8 +115,9 @@ namespace MyDartsPredictor.Dal.Migrations
                     b.Property<int?>("GamesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PredictionScore")
-                        .HasColumnType("int");
+                    b.Property<string>("PredictionScore")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PredictionWinner")
                         .HasColumnType("int");
@@ -356,7 +357,7 @@ namespace MyDartsPredictor.Dal.Migrations
                     b.HasOne("MyDartsPredictor.Dal.Entities.Tournament", "Tournament")
                         .WithMany("UsersInTournament")
                         .HasForeignKey("TournamentId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MyDartsPredictor.Dal.Entities.Users", "User")

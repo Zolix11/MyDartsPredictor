@@ -6,7 +6,7 @@ public class PredictionDto
     public int GameId { get; set; }
     public int UserId { get; set; }
     public int PredictionWinner { get; set; }
-    public int PredictionScore { get; set; }
+    public string PredictionScore { get; set; }
     public GameDto Game { get; set; } = null!;
     public UserDto User { get; set; } = null!;
 }

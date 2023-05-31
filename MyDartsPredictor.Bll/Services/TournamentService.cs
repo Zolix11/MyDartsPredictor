@@ -22,26 +22,65 @@ namespace MyDartsPredictor.Bll.Services
 
         public async Task<IEnumerable<TournamentDto>> GetAllTournamentsAsync()
         {
-            var tournaments = await _dbContext.Tournaments.ToListAsync();
+            var tournaments = await _dbContext.Tournaments
+                 .Include(u => u.FounderUser)
+                 .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
+                 .Include(p => p.Games)
+                 .ToListAsync();
+
             var tournamentDtos = _mapper.Map<IEnumerable<TournamentDto>>(tournaments);
+
+            foreach (var tournamentDto in tournamentDtos)
+            {
+                var listUsersWithPoints = await _dbContext.UsersInTournaments
+                    .Where(p => p.TournamentId == tournamentDto.Id)
+                    .ToListAsync();
+
+                foreach (var userWithPoints in listUsersWithPoints)
+                {
+                    var userWithPointsDto = _mapper.Map<UserWithPointsDto>(userWithPoints);
+                    tournamentDto.UsersWithPoints.Add(userWithPointsDto);
+                }
+            }
+
             return tournamentDtos;
         }
 
         public async Task<TournamentDto> GetTournamentByIdAsync(int tournamentId)
         {
-            var tournament = await _dbContext.Tournaments.FindAsync(tournamentId);
-            await Console.Out.WriteLineAsync(tournament.ToString());
+            var tournament = await _dbContext.Tournaments
+                 .Include(u => u.FounderUser)
+                .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
+                .Include(p => p.Games)
+                .FirstOrDefaultAsync(t => t.Id == tournamentId);
             var tournamentDto = _mapper.Map<TournamentDto>(tournament);
+
+            var listUsersWithPoints = await _dbContext.UsersInTournaments
+                .Where(p => p.TournamentId == tournamentId)
+                .ToListAsync();
+
+            foreach (var userWithPoints in listUsersWithPoints)
+            {
+                var userWithPointsDto = _mapper.Map<UserWithPointsDto>(userWithPoints);
+                tournamentDto.UsersWithPoints.Add(userWithPointsDto);
+            }
             return tournamentDto;
         }
 
         public async Task<TournamentDto> CreateTournamentAsync(TournamentCreate tournamentCreateDto)
         {
+
+            var founderUser = await _dbContext.Users.FindAsync(tournamentCreateDto.founderUserId);
+            if (founderUser == null)
+            {
+                throw new NotFoundException("User not found.");
+            }
+
             var tournament = new Tournament
             {
                 Name = tournamentCreateDto.Name,
                 FoundationTime = DateTime.UtcNow,
-                FounderUserId = tournamentCreateDto.FounderUser.Id
+                FounderUserId = founderUser.Id
             };
 
             _dbContext.Tournaments.Add(tournament);
@@ -49,8 +88,6 @@ namespace MyDartsPredictor.Bll.Services
 
             var addedTournament = await _dbContext.Tournaments
                    .Include(t => t.FounderUser)
-                   .Include(t => t.Games)
-                   .ThenInclude(g => g.Result)
                    .FirstOrDefaultAsync(t => t.Id == tournament.Id);
 
             return _mapper.Map<TournamentDto>(addedTournament);
@@ -92,7 +129,43 @@ namespace MyDartsPredictor.Bll.Services
             return tournamentDtos;
         }
 
+        public async Task JoinPlayerToTournamentAsync(int tournamentId, int playerId)
+        {
+            var tournament = await _dbContext
+                .Tournaments
+                .Include(f => f.FounderUser)
+                .Include(u => u.UsersInTournament)
+                       .ThenInclude(u => u.User)
+                .FirstOrDefaultAsync(p => p.Id == tournamentId);
 
+            if (tournament == null)
+            {
+                throw new NotFoundException("Tournament not found.");
 
+            }
+            var player = await _dbContext.Users.FindAsync(playerId);
+            if (player == null)
+            {
+                throw new NotFoundException("User not found.");
+            }
+
+            var userAlreadyIn = tournament.UsersInTournament.FirstOrDefault(p => p.UserId == playerId);
+            if (userAlreadyIn != null)
+            {
+                throw new ConflictException($"Player with ID {playerId} is already in tournament : {tournament.Name}.");
+            }
+
+            var tournamentDto = _mapper.Map<TournamentDto>(tournament);
+
+            var newUserInTournament = new UsersInTournament
+            {
+                TournamentId = tournamentId,
+                UserId = playerId,
+                EarnedPoints = 0,
+            };
+
+            _dbContext.UsersInTournaments.Add(newUserInTournament);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

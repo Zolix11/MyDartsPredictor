@@ -3305,6 +3305,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj": {
+              "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj"
+            },
             "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj": {
               "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj"
             }

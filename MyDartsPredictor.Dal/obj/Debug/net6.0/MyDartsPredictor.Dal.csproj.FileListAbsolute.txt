@@ -12,3 +12,17 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor\obj\Debug\net6.0\refint\
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor\obj\Debug\net6.0\MyDartsPredictor.Dal.pdb
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor\obj\Debug\net6.0\MyDartsPredictor.Dal.genruntimeconfig.cache
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor\obj\Debug\net6.0\ref\MyDartsPredictor.Dal.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\bin\Debug\net6.0\MyDartsPredictor.Dal.deps.json
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\bin\Debug\net6.0\MyDartsPredictor.Dal.runtimeconfig.json
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\bin\Debug\net6.0\MyDartsPredictor.Dal.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\bin\Debug\net6.0\MyDartsPredictor.Dal.pdb
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.csproj.AssemblyReference.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.AssemblyInfoInputs.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.AssemblyInfo.cs
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.csproj.CoreCompileInputs.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\refint\MyDartsPredictor.Dal.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.pdb
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\MyDartsPredictor.Dal.genruntimeconfig.cache
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Dal\obj\Debug\net6.0\ref\MyDartsPredictor.Dal.dll

@@ -11,6 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\MyDartsPredictor.Dal\MyDartsPredictor.Dal.csproj" />
 		<ProjectReference Include="..\MyDartsPredictor\MyDartsPredictor.Dal.csproj" />
 	</ItemGroup>
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -64,7 +65,7 @@ namespace MyDartsPredictor.Dal.Migrations
                         column: x => x.TournamentId,
                         principalTable: "Tournaments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UsersInTournaments_Users_UserId",
                         column: x => x.UserId,
@@ -110,7 +111,7 @@ namespace MyDartsPredictor.Dal.Migrations
                     GameId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     PredictionWinner = table.Column<int>(type: "int", nullable: false),
-                    PredictionScore = table.Column<int>(type: "int", nullable: false),
+                    PredictionScore = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GamesId = table.Column<int>(type: "int", nullable: true),
                     UsersId = table.Column<int>(type: "int", nullable: true)
                 },

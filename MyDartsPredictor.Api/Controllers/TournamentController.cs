@@ -11,10 +11,12 @@ namespace MyDartsPredictor.Api.Controllers
     public class TournamentController : ControllerBase
     {
         private readonly ITournamentService _tournamentService;
+        private readonly IUserSevice _userSevice;
 
-        public TournamentController(ITournamentService tournamentService)
+        public TournamentController(ITournamentService tournamentService, IUserSevice userSevice)
         {
             _tournamentService = tournamentService;
+            _userSevice = userSevice;
         }
 
         [HttpGet]
@@ -35,11 +37,38 @@ namespace MyDartsPredictor.Api.Controllers
             return Ok(tournament);
         }
 
+        [HttpPost("{tournamentId}/join/{playerId}")]
+        public async Task<IActionResult> JoinPlayerToTournament(int tournamentId, int playerId)
+        {
+            try
+            {
+                await _tournamentService.JoinPlayerToTournamentAsync(tournamentId, playerId);
+                return Ok("Player joined the tournament successfully.");
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (ConflictException ex)
+            {
+                return Conflict(ex.Message);
+            }
+        }
+
+
+
         [HttpPost]
         public async Task<IActionResult> CreateTournament(TournamentCreate tournamentDto)
         {
-            TournamentDto createdTournament = await _tournamentService.CreateTournamentAsync(tournamentDto);
-            return CreatedAtAction(nameof(GetTournamentById), new { id = createdTournament.Id }, createdTournament);
+            try
+            {
+                var createdTournament = await _tournamentService.CreateTournamentAsync(tournamentDto);
+                return CreatedAtAction(nameof(GetTournamentById), new { id = createdTournament.Id }, createdTournament);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
@@ -57,12 +86,18 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTournament(int id)
+        public async Task<IActionResult> DeleteTournament(int id, int userId)
         {
             try
             {
-                await _tournamentService.DeleteTournamentAsync(id);
-                return NoContent();
+                TournamentDto tournament = await _tournamentService.GetTournamentByIdAsync(id);
+                if (tournament != null && tournament.FounderUser.Id == userId)
+                {
+                    await _tournamentService.DeleteTournamentAsync(id);
+                    return NoContent();
+
+                }
+                return Unauthorized("You are not the founder user");
             }
             catch (NotFoundException)
             {

@@ -3515,11 +3515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj",
+      "projectUniqueName": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj",
       "projectName": "MyDartsPredictor.Dal",
-      "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\MyDartsPredictor.Dal.csproj",
+      "projectPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj",
       "packagesPath": "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\",
-      "outputPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor\\obj\\",
+      "outputPath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

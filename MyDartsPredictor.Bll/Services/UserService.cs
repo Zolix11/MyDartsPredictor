@@ -21,14 +21,26 @@ namespace MyDartsPredictor.Bll.Services
 
         public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
         {
-            var users = await _dbContext.Users.ToListAsync();
-            return _mapper.Map<IEnumerable<UserDto>>(users);
+            var users = await _dbContext.Users
+                .Include(t => t.UsersInTournaments)
+                    .ThenInclude(p => p.Tournament)
+                    .ThenInclude(p => p.FounderUser)
+                .Include(t => t.Predictions)
+                .ToListAsync();
+
+            var userDtos = _mapper.Map<IEnumerable<UserDto>>(users);
+            return userDtos;
         }
 
         public async Task<UserDto> GetUserByIdAsync(int userId)
         {
-            var user = await _dbContext.Users.FindAsync(userId);
-            return _mapper.Map<UserDto>(user);
+            var user = await _dbContext.Users
+                .Include(t => t.UsersInTournaments)
+                  .ThenInclude(p => p.Tournament)
+                .Include(t => t.Predictions)
+                .FirstOrDefaultAsync(t => t.Id == userId);
+            var userDto = _mapper.Map<UserDto>(user);
+            return userDto;
         }
 
         public async Task<UserDto> CreateUserAsync(UserCreate userCreationDto)

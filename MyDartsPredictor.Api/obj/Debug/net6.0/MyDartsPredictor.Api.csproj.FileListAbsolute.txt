@@ -103,3 +103,4 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\ref
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyDartsPredictor.Api.pdb
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyDartsPredictor.Api.genruntimeconfig.cache
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\ref\MyDartsPredictor.Api.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyDartsPredictor.Api.MvcApplicationPartsAssemblyInfo.cs

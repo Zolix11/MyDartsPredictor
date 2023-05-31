@@ -6,7 +6,7 @@ public class Prediction
     public int GameId { get; set; }
     public int UserId { get; set; }
     public int PredictionWinner { get; set; }
-    public int PredictionScore { get; set; }
+    public string PredictionScore { get; set; } = null!;
 
     // Navigation properties
     public Games Game { get; set; } = null!;

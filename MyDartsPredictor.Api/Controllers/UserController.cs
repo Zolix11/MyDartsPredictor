@@ -52,12 +52,13 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<UserDto>> CreateUserAsync(UserCreate userDto)
+        public async Task<ActionResult<UserDto>> CreateUserAsync([FromBody] UserCreate userDto)
         {
             try
             {
                 var createdUser = await _userService.CreateUserAsync(userDto);
-                return CreatedAtAction(nameof(GetUserByIdAsync), new { userId = createdUser.Id }, createdUser);
+                return CreatedAtRoute(nameof(GetUserByIdAsync), new { userId = createdUser.Id }, createdUser);
+
             }
             catch (Exception ex)
             {
