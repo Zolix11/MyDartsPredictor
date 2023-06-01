@@ -38,7 +38,7 @@ public class AppDbContext : DbContext
             .HasOne(t => t.FounderUser)
             .WithMany()
             .HasForeignKey(t => t.FounderUserId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.SetNull);
 
         modelBuilder.Entity<Tournament>()
             .HasMany(t => t.UsersInTournament)
@@ -65,13 +65,21 @@ public class AppDbContext : DbContext
             .HasForeignKey<Games>(g => g.ResultId)
             .OnDelete(DeleteBehavior.Cascade);
 
+
+        modelBuilder.Entity<Games>()
+            .HasMany(g => g.Predictions)
+            .WithOne(p => p.Game)
+            .HasForeignKey(p => p.GameId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         modelBuilder.Entity<Result>()
             .HasOne(r => r.Game)
             .WithMany()
             .HasForeignKey(r => r.GameId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Result>().HasOne(r => r.Game)
+        modelBuilder.Entity<Result>()
+            .HasOne(r => r.Game)
             .WithMany()
             .HasForeignKey(r => r.GameId)
             .HasPrincipalKey(r => r.Id)
@@ -81,7 +89,7 @@ public class AppDbContext : DbContext
             .HasOne(p => p.Game)
             .WithMany()
             .HasForeignKey(p => p.GameId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Prediction>()
             .HasOne(p => p.User)

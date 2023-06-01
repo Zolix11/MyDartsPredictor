@@ -76,14 +76,25 @@ public class GameService : IGameService
     public async Task DeleteGameAsync(int gameId)
     {
         var game = await _dbContext.Games.FindAsync(gameId);
-
-        if (game == null)
+        if (game != null)
         {
-            throw new NotFoundException($"Game with ID {gameId} not found");
-        }
+            var predictions = _dbContext.Predictions.Where(p => p.GameId == gameId);
 
-        _dbContext.Games.Remove(game);
-        await _dbContext.SaveChangesAsync();
+            foreach (var prediction in predictions)
+            {
+                _dbContext.Predictions.Remove(prediction);
+            }
+
+            var results = _dbContext.Results.Where(p => p.GameId == gameId);
+            foreach (var result in results)
+            {
+                _dbContext.Results.Remove(result);
+
+            }
+            _dbContext.Games.Remove(game);
+
+            await _dbContext.SaveChangesAsync();
+        }
     }
 
 }

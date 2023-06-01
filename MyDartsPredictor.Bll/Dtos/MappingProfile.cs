@@ -49,7 +49,8 @@ namespace MyDartsPredictor.Bll.Dtos
 
 
             CreateMap<Result, ResultDto>()
-              .ForMember(dest => dest.Game, opt => opt.MapFrom(src => src.Game))
+              .ForMember(dest => dest.WinnerPlayer, opt => opt.MapFrom(src => src.WinnerPlayer))
+              .ForMember(dest => dest.Score, opt => opt.MapFrom(src => src.Score))
               .ReverseMap();
             ;
 

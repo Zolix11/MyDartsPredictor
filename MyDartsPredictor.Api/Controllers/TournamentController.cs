@@ -58,6 +58,7 @@ namespace MyDartsPredictor.Api.Controllers
 
 
         [HttpPost]
+        [ActionName(nameof(GetTournamentById))]
         public async Task<IActionResult> CreateTournament(TournamentCreate tournamentDto)
         {
             try

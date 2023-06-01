@@ -36,12 +36,13 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpPost]
+        [ActionName(nameof(GetPredictionByIdAsync))]
         public async Task<ActionResult<PredictionDto>> CreatePredictionAsync(PredictionCreate predictionDto)
         {
             try
             {
                 var createdPrediction = await _predictionService.CreatePredictionAsync(predictionDto);
-                return Ok(createdPrediction);
+                return CreatedAtAction(nameof(GetPredictionByIdAsync), new { id = createdPrediction.Id }, createdPrediction);
             }
             catch (Exception ex)
             {

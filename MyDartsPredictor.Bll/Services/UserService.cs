@@ -84,6 +84,13 @@ namespace MyDartsPredictor.Bll.Services
                 throw new NotFoundException($"User with ID {userId} not found");
             }
 
+            var tournament = await _dbContext.Tournaments.Include(p => p.FounderUser).FirstOrDefaultAsync(p => p.FounderUserId == userId);
+
+            if (tournament != null)
+            {
+                throw new ConflictException($"{tournament.FounderUser.Name} is a founder of {tournament.Name} please delete the tournament first");
+            }
+
             _dbContext.Users.Remove(existingUser);
             await _dbContext.SaveChangesAsync();
         }

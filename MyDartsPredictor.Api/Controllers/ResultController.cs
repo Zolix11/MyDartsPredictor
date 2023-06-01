@@ -54,12 +54,13 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpPost]
+        [ActionName(nameof(GetResultByIdAsync))]
         public async Task<ActionResult<ResultDto>> CreateResultAsync(ResultCreate resultDto)
         {
             try
             {
                 var createdResult = await _resultService.CreateResultAsync(resultDto);
-                return Ok(createdResult);
+                return CreatedAtAction(nameof(GetResultByIdAsync), new { id = createdResult.Id }, createdResult);
             }
             catch (NotFoundException ex)
             {

@@ -47,7 +47,6 @@ public class ResultService : IResultService
 
     public async Task<ResultDto> CreateResultAsync(ResultCreate resultDto)
     {
-        //Test if it is after the real game date
         var game = await _dbContext.Games
             .Include(p => p.Tournament)
             .Include(p => p.Result)
@@ -73,6 +72,14 @@ public class ResultService : IResultService
         _dbContext.Results.Add(newResult);
         await _dbContext.SaveChangesAsync();
 
+        var resultId = newResult.Id;
+
+        if (game != null)
+        {
+            game.ResultId = resultId;
+            await _dbContext.SaveChangesAsync();
+        }
+
         var predictions = await _dbContext.Predictions
          .Where(p => p.GameId == resultDto.GameId)
          .ToListAsync();
@@ -92,8 +99,8 @@ public class ResultService : IResultService
         }
 
         await _dbContext.SaveChangesAsync();
-
-        return _mapper.Map<ResultDto>(newResult);
+        var newResultDto = _mapper.Map<ResultDto>(newResult);
+        return newResultDto;
     }
 
     public async Task<ResultDto> UpdateResultAsync(int resultId, ResultCreate resultDto)

@@ -36,12 +36,13 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpPost]
+        [ActionName(nameof(GetGameByIdAsync))]
         public async Task<ActionResult<GameDto>> CreateGameAsync(GameCreate gameDto)
         {
             try
             {
                 var createdGame = await _gameService.CreateGameAsync(gameDto);
-                return Ok();
+                return CreatedAtAction(nameof(GetGameByIdAsync), new { id = createdGame.Id }, createdGame);
             }
             catch (Exception ex)
             {

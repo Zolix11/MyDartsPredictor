@@ -109,7 +109,14 @@ namespace MyDartsPredictor.Bll.Services
 
         public async Task DeleteTournamentAsync(int tournamentId)
         {
-            var tournament = await _dbContext.Tournaments.FindAsync(tournamentId);
+            var tournament = await _dbContext.Tournaments
+                 .Include(t => t.FounderUser)
+                 .Include(t => t.UsersInTournament)
+                     .ThenInclude(uit => uit.User)
+                 .Include(t => t.Games)
+                     .ThenInclude(g => g.Result)
+                 .FirstOrDefaultAsync(t => t.Id == tournamentId);
+
             if (tournament == null)
             {
                 throw new NotFoundException();
