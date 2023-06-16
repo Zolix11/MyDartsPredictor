@@ -9,5 +9,5 @@ public class UsersInTournament
 
     // Navigation properties
     public Tournament Tournament { get; set; } = null!;
-    public Users User { get; set; } = null!;
+    public User User { get; set; } = null!;
 }

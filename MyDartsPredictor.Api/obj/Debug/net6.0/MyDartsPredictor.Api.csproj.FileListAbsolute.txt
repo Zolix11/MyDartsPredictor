@@ -104,3 +104,6 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyD
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyDartsPredictor.Api.genruntimeconfig.cache
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\ref\MyDartsPredictor.Api.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyDartsPredictor.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Npgsql.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

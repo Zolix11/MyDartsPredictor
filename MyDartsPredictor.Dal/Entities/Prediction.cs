@@ -9,6 +9,6 @@ public class Prediction
     public string PredictionScore { get; set; } = null!;
 
     // Navigation properties
-    public Games Game { get; set; } = null!;
-    public Users User { get; set; } = null!;
+    public Game Game { get; set; } = null!;
+    public User User { get; set; } = null!;
 }

@@ -4,7 +4,6 @@ public class UserDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
-    public string AzureAdB2CId { get; set; } = null!;
 
     public List<TournamentDto> Tournaments { get; set; } = new List<TournamentDto>();
 

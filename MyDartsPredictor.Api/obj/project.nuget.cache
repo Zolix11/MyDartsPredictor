@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GcYUXNn6TSKeM2V1X9VIMNMVXiwg0ri9itRS1H0hbUmqOUPKHmRzX7/sTQswwMWFsjdzHal+U8AjuhDUIH2wVw==",
+  "dgSpecHash": "q4ipjqL+fOxiFiO/X0+iDGymhjJuHan1e/UKgrfJv8R2Qs7Ac6bGxKkRgC7EHoxouz2XeIjlCMkyYR59GMbi7Q==",
   "success": true,
   "projectFilePath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Api\\MyDartsPredictor.Api.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\hellang.middleware.problemdetails\\6.5.1\\hellang.middleware.problemdetails.6.5.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.18\\microsoft.aspnetcore.authentication.jwtbearer.6.0.18.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
@@ -52,6 +53,8 @@
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\njsonschema\\10.9.0\\njsonschema.10.9.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\njsonschema.yaml\\10.9.0\\njsonschema.yaml.10.9.0.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\nswag.annotations\\13.19.0\\nswag.annotations.13.19.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\nswag.aspnetcore\\13.19.0\\nswag.aspnetcore.13.19.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\nswag.core\\13.19.0\\nswag.core.13.19.0.nupkg.sha512",

@@ -7,7 +7,7 @@ namespace MyDartsPredictor.Bll.Dtos
     {
         public MappingProfile()
         {
-            CreateMap<Users, UserDto>()
+            CreateMap<User, UserDto>()
                   .ForMember(dest => dest.Predictions, opt => opt.MapFrom(src => src.Predictions))
                   .ForMember(dest => dest.Tournaments, opt => opt.MapFrom(src => src.UsersInTournaments.Select(uit => uit.Tournament)
              ));
@@ -30,7 +30,7 @@ namespace MyDartsPredictor.Bll.Dtos
                  .ForMember(dest => dest.EarnedPoints, opt => opt.MapFrom(src => src.EarnedPoints))
                  .ReverseMap();
 
-            CreateMap<Games, GameDto>()
+            CreateMap<Game, GameDto>()
                .ForMember(dest => dest.Player2Name, opt => opt.MapFrom(src => src.Player2Name))
                .ForMember(dest => dest.Player1Name, opt => opt.MapFrom(src => src.Player1Name))
                .ForMember(dest => dest.MatchDate, opt => opt.MapFrom(src => src.MatchDate))

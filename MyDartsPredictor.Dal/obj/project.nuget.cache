@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zx4jkILSExrm/tLYIMw5w1Cqa3LTE4m6kpBMiLbHg2HS4t9vd3sYJWdDc3dvsOAjvRuStk6Qq5CKH17Y3C1XzQ==",
+  "dgSpecHash": "SI3sVANs9DHPiUxlN9opEFzOXT6UKQFsjYog6GvXVTjEv7mPkydkDa/pzGY7qPSV/Ctui/hAGZh/ZHVANSYJ5Q==",
   "success": true,
   "projectFilePath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Dal\\MyDartsPredictor.Dal.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

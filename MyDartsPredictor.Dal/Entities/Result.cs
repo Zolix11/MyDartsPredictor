@@ -8,5 +8,5 @@ public class Result
     public string Score { get; set; } = null!;
 
     // Navigation property
-    public Games Game { get; set; } = null!;
+    public Game Game { get; set; } = null!;
 }

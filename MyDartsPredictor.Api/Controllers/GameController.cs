@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.Expections;
 using MyDartsPredictor.Bll.Interfaces;
@@ -6,6 +7,7 @@ using MyDartsPredictor.Bll.SimplifiedDtos;
 
 namespace MyDartsPredictor.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/games")]
     public class GameController : ControllerBase
@@ -51,11 +53,11 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpDelete("{gameId}")]
-        public async Task<ActionResult> DeleteGameAsync(int gameId)
+        public async Task<ActionResult> DeleteGameAsync(int gameId, [FromBody] int founderUserId)
         {
             try
             {
-                await _gameService.DeleteGameAsync(gameId);
+                await _gameService.DeleteGameAsync(gameId, founderUserId);
                 return NoContent();
             }
             catch (NotFoundException ex)

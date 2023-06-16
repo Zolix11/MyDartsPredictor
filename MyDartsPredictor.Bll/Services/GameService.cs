@@ -58,7 +58,7 @@ public class GameService : IGameService
             throw new ConflictException($"Founder id{gameDto.founderId} is not the founder of the tournament");
         }
 
-        var newGame = new Games
+        var newGame = new Game
         {
             Player1Name = gameDto.Player1Name,
             Player2Name = gameDto.Player2Name,
@@ -73,24 +73,45 @@ public class GameService : IGameService
         return createdGameDto;
     }
 
-    public async Task DeleteGameAsync(int gameId)
+    public async Task DeleteGameAsync(int gameId, int founderId)
     {
-        var game = await _dbContext.Games.FindAsync(gameId);
+
+        var game = await _dbContext.Games
+            .Include(p => p.Tournament)
+            .ThenInclude(p => p.FounderUser)
+            .FirstOrDefaultAsync(p => p.Id == gameId);
         if (game != null)
         {
-            var predictions = _dbContext.Predictions.Where(p => p.GameId == gameId);
-
-            foreach (var prediction in predictions)
+            if (game.Tournament.FounderUserId != founderId)
             {
-                _dbContext.Predictions.Remove(prediction);
+                throw new NotFoundException($"Game with ID {gameId} not found");
             }
+            var predictions = await _dbContext.Predictions
+                .Where(p => p.GameId == gameId)
+                .ToListAsync();
 
-            var results = _dbContext.Results.Where(p => p.GameId == gameId);
-            foreach (var result in results)
+            var result = await _dbContext.Results.FirstOrDefaultAsync(p => p.GameId == gameId);
+            if (result != null)
             {
                 _dbContext.Results.Remove(result);
 
             }
+            foreach (var prediction in predictions)
+            {
+                var userInTournament = await _dbContext.UsersInTournaments
+                    .FirstOrDefaultAsync(u => u.UserId == prediction.UserId && u.TournamentId == prediction.Game.TournamentId);
+
+                if (userInTournament != null && result != null)
+                {
+                    if (prediction.PredictionWinner == result.WinnerPlayer)
+                    {
+                        userInTournament.EarnedPoints -= 5;
+                    }
+                }
+
+                _dbContext.Predictions.Remove(prediction);
+            }
+
             _dbContext.Games.Remove(game);
 
             await _dbContext.SaveChangesAsync();

@@ -133,7 +133,6 @@ public class ResultService : IResultService
             .Where(g => g.ResultId == existingResult.Id)
             .ToListAsync();
 
-        // Update the ResultId to null for each game
         foreach (var game in gamesToUpdate)
         {
             game.ResultId = null;

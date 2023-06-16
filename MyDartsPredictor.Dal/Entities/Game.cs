@@ -1,6 +1,6 @@
 ﻿namespace MyDartsPredictor.Dal.Entities;
 
-public class Games
+public class Game
 {
     public int Id { get; set; }
     public DateTime MatchDate { get; set; }

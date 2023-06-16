@@ -8,7 +8,7 @@ public class Tournament
     public int FounderUserId { get; set; }
 
     // Navigation property
-    public Users FounderUser { get; set; } = null!;
-    public ICollection<Games> Games { get; set; } = new List<Games>();
+    public User FounderUser { get; set; } = null!;
+    public ICollection<Game> Games { get; set; } = new List<Game>();
     public ICollection<UsersInTournament> UsersInTournament { get; set; } = new List<UsersInTournament>();
 }

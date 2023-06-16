@@ -7,5 +7,5 @@ public interface IGameService
 {
     Task<GameDto> GetGameByIdAsync(int gameId);
     Task<GameDto> CreateGameAsync(GameCreate gameDto);
-    Task DeleteGameAsync(int gameId);
+    Task DeleteGameAsync(int gameId, int founderId);
 }

@@ -28,28 +28,13 @@ namespace MyDartsPredictor.Bll.Services
                  .Include(p => p.Games)
                  .ToListAsync();
 
-            var tournamentDtos = _mapper.Map<IEnumerable<TournamentDto>>(tournaments);
-
-            foreach (var tournamentDto in tournamentDtos)
-            {
-                var listUsersWithPoints = await _dbContext.UsersInTournaments
-                    .Where(p => p.TournamentId == tournamentDto.Id)
-                    .ToListAsync();
-
-                foreach (var userWithPoints in listUsersWithPoints)
-                {
-                    var userWithPointsDto = _mapper.Map<UserWithPointsDto>(userWithPoints);
-                    tournamentDto.UsersWithPoints.Add(userWithPointsDto);
-                }
-            }
-
-            return tournamentDtos;
+            return _mapper.Map<IEnumerable<TournamentDto>>(tournaments);
         }
 
         public async Task<TournamentDto> GetTournamentByIdAsync(int tournamentId)
         {
             var tournament = await _dbContext.Tournaments
-                 .Include(u => u.FounderUser)
+                .Include(u => u.FounderUser)
                 .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
                 .Include(p => p.Games)
                 .FirstOrDefaultAsync(t => t.Id == tournamentId);
@@ -59,11 +44,7 @@ namespace MyDartsPredictor.Bll.Services
                 .Where(p => p.TournamentId == tournamentId)
                 .ToListAsync();
 
-            foreach (var userWithPoints in listUsersWithPoints)
-            {
-                var userWithPointsDto = _mapper.Map<UserWithPointsDto>(userWithPoints);
-                tournamentDto.UsersWithPoints.Add(userWithPointsDto);
-            }
+
             return tournamentDto;
         }
 

@@ -39,16 +39,17 @@ namespace MyDartsPredictor.Bll.Services
                   .ThenInclude(p => p.Tournament)
                 .Include(t => t.Predictions)
                 .FirstOrDefaultAsync(t => t.Id == userId);
+
+
             var userDto = _mapper.Map<UserDto>(user);
             return userDto;
         }
 
         public async Task<UserDto> CreateUserAsync(UserCreate userCreationDto)
         {
-            var user = new Users
+            var user = new User
             {
                 Name = userCreationDto.Name,
-                AzureAdB2CId = "id",
             };
 
             _dbContext.Users.Add(user);

@@ -3,9 +3,9 @@ using MyDartsPredictor.Dal.Entities;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Users> Users { get; set; }
+    public DbSet<User> Users { get; set; }
     public DbSet<Tournament> Tournaments { get; set; }
-    public DbSet<Games> Games { get; set; }
+    public DbSet<Game> Games { get; set; }
     public DbSet<Result> Results { get; set; }
     public DbSet<UsersInTournament> UsersInTournaments { get; set; }
     public DbSet<Prediction> Predictions { get; set; }
@@ -24,7 +24,7 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<UsersInTournament>()
             .HasOne(u => u.User)
-            .WithMany()
+            .WithMany(t => t.UsersInTournaments)
             .HasForeignKey(u => u.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
@@ -37,65 +37,53 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Tournament>()
             .HasOne(t => t.FounderUser)
             .WithMany()
-            .HasForeignKey(t => t.FounderUserId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .HasForeignKey(t => t.FounderUserId);
 
         modelBuilder.Entity<Tournament>()
             .HasMany(t => t.UsersInTournament)
             .WithOne(u => u.Tournament)
-            .HasForeignKey(u => u.TournamentId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .HasForeignKey(u => u.TournamentId);
 
         modelBuilder.Entity<Tournament>()
-           .HasMany(t => t.Games)
-           .WithOne(g => g.Tournament)
-           .HasForeignKey(g => g.TournamentId)
-           .OnDelete(DeleteBehavior.Cascade);
+            .HasMany(t => t.Games)
+            .WithOne(g => g.Tournament)
+            .HasForeignKey(g => g.TournamentId);
 
 
-        modelBuilder.Entity<Games>()
+        modelBuilder.Entity<Game>()
             .HasOne(g => g.Tournament)
             .WithMany(t => t.Games)
             .HasForeignKey(g => g.TournamentId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Games>()
+        modelBuilder.Entity<Game>()
             .HasOne(g => g.Result)
-            .WithOne()
-            .HasForeignKey<Games>(g => g.ResultId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .WithOne(r => r.Game)
+            .HasForeignKey<Result>(r => r.GameId);
 
 
-        modelBuilder.Entity<Games>()
+        modelBuilder.Entity<Game>()
             .HasMany(g => g.Predictions)
             .WithOne(p => p.Game)
-            .HasForeignKey(p => p.GameId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .HasForeignKey(p => p.GameId);
 
         modelBuilder.Entity<Result>()
             .HasOne(r => r.Game)
-            .WithMany()
-            .HasForeignKey(r => r.GameId)
+            .WithOne(g => g.Result)
+            .HasForeignKey<Result>(r => r.GameId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Result>()
-            .HasOne(r => r.Game)
-            .WithMany()
-            .HasForeignKey(r => r.GameId)
-            .HasPrincipalKey(r => r.Id)
+
+        modelBuilder.Entity<Prediction>()
+            .HasOne(p => p.User)
+            .WithMany(u => u.Predictions)
+            .HasForeignKey(p => p.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Prediction>()
             .HasOne(p => p.Game)
-            .WithMany()
-            .HasForeignKey(p => p.GameId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<Prediction>()
-            .HasOne(p => p.User)
-            .WithMany()
-            .HasForeignKey(p => p.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .WithMany(g => g.Predictions)
+            .HasForeignKey(p => p.GameId);
 
 
         base.OnModelCreating(modelBuilder);
