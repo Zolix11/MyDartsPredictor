@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.Expections;
 using MyDartsPredictor.Bll.Interfaces;
@@ -6,6 +7,7 @@ using MyDartsPredictor.Bll.SimplifiedDtos;
 
 namespace MyDartsPredictor.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/tournaments")]
     public class TournamentController : ControllerBase
@@ -22,6 +24,11 @@ namespace MyDartsPredictor.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllTournaments()
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             IEnumerable<TournamentDto> tournaments = await _tournamentService.GetAllTournamentsAsync();
             return Ok(tournaments);
         }
@@ -37,12 +44,17 @@ namespace MyDartsPredictor.Api.Controllers
             return Ok(tournament);
         }
 
-        [HttpPost("{tournamentId}/join/{playerId}")]
-        public async Task<IActionResult> JoinPlayerToTournament(int tournamentId, int playerId)
+        [HttpPost("{tournamentId}/join")]
+        public async Task<IActionResult> JoinPlayerToTournament(int tournamentId)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             try
             {
-                await _tournamentService.JoinPlayerToTournamentAsync(tournamentId, playerId);
+                await _tournamentService.JoinPlayerToTournamentAsync(tournamentId, uid);
                 return Ok("Player joined the tournament successfully.");
             }
             catch (NotFoundException ex)
@@ -61,9 +73,14 @@ namespace MyDartsPredictor.Api.Controllers
         [ActionName(nameof(GetTournamentById))]
         public async Task<IActionResult> CreateTournament(TournamentCreate tournamentDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             try
             {
-                var createdTournament = await _tournamentService.CreateTournamentAsync(tournamentDto);
+                var createdTournament = await _tournamentService.CreateTournamentAsync(tournamentDto, uid);
                 return CreatedAtAction(nameof(GetTournamentById), new { id = createdTournament.Id }, createdTournament);
             }
             catch (NotFoundException ex)

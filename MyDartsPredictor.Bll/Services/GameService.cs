@@ -34,13 +34,14 @@ public class GameService : IGameService
         return gameDto;
     }
 
-    public async Task<GameDto> CreateGameAsync(GameCreate gameDto)
+    public async Task<GameDto> CreateGameAsync(GameCreate gameDto, string uid)
     {
-        var founderUser = await _dbContext.Users.FindAsync(gameDto.founderId);
 
-        if (founderUser == null)
+        var user = await _dbContext.Users.Where(p => p.AuthUID == uid).FirstOrDefaultAsync();
+
+        if (user == null)
         {
-            throw new NotFoundException($"User with ID {gameDto.founderId} not found");
+            throw new NotFoundException($"User with ID user not found");
         }
 
         var tournament = await _dbContext
@@ -53,9 +54,9 @@ public class GameService : IGameService
 
         }
 
-        if (tournament.FounderUser.Id != gameDto.founderId)
+        if (tournament.FounderUser.Id != user.Id)
         {
-            throw new ConflictException($"Founder id{gameDto.founderId} is not the founder of the tournament");
+            throw new ConflictException($"Founder id{user.Id} is not the founder of the tournament");
         }
 
         var newGame = new Game
@@ -73,16 +74,22 @@ public class GameService : IGameService
         return createdGameDto;
     }
 
-    public async Task DeleteGameAsync(int gameId, int founderId)
+    public async Task DeleteGameAsync(int gameId, string uid)
     {
+        var user = await _dbContext.Users.Where(p => p.AuthUID == uid).FirstOrDefaultAsync();
 
+        if (user == null)
+        {
+            throw new NotFoundException($"User with ID user not found");
+
+        }
         var game = await _dbContext.Games
             .Include(p => p.Tournament)
             .ThenInclude(p => p.FounderUser)
             .FirstOrDefaultAsync(p => p.Id == gameId);
         if (game != null)
         {
-            if (game.Tournament.FounderUserId != founderId)
+            if (game.Tournament.FounderUserId != user.Id)
             {
                 throw new NotFoundException($"Game with ID {gameId} not found");
             }

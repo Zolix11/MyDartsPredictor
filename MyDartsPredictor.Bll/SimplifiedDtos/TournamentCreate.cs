@@ -4,7 +4,5 @@
     {
         public string Name { get; set; } = null!;
         public DateTime Created { get; set; }
-        public int founderUserId { get; set; }
-
     }
 }

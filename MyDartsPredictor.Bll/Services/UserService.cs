@@ -45,11 +45,25 @@ namespace MyDartsPredictor.Bll.Services
             return userDto;
         }
 
-        public async Task<UserDto> CreateUserAsync(UserCreate userCreationDto)
+        public async Task<UserDto> GetUserByAuthidAsync(string userId)
+        {
+            var user = await _dbContext.Users
+                .Include(t => t.UsersInTournaments)
+                .ThenInclude(p => p.Tournament)
+                .Include(t => t.Predictions)
+                .FirstOrDefaultAsync(t => t.AuthUID == userId);
+
+
+            var userDto = _mapper.Map<UserDto>(user);
+            return userDto;
+        }
+
+        public async Task<UserDto> CreateUserAsync(UserCreate userCreationDto, string uid)
         {
             var user = new User
             {
                 Name = userCreationDto.Name,
+                AuthUID = uid
             };
 
             _dbContext.Users.Add(user);

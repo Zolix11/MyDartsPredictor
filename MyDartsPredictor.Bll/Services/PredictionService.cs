@@ -19,12 +19,13 @@ public class PredictionService : IPredictionService
         _mapper = mapper;
     }
 
-    public async Task<PredictionDto> CreatePredictionAsync(PredictionCreate predictionDto)
+    public async Task<PredictionDto> CreatePredictionAsync(PredictionCreate predictionDto, string uid)
     {
-        var user = await _dbContext.Users.FindAsync(predictionDto.UserId);
+        var user = await _dbContext.Users.Where(p => p.AuthUID == uid).FirstOrDefaultAsync();
+
         if (user == null)
         {
-            throw new NotFoundException($"User with ID {predictionDto.UserId} not found");
+            throw new NotFoundException($"User with ID user not found");
 
         }
 
@@ -59,8 +60,25 @@ public class PredictionService : IPredictionService
         return _mapper.Map<PredictionDto>(prediction);
     }
 
-    public async Task<PredictionDto> UpdatePredictionAsync(int predictionId, PredictionCreate changedDto)
+    public async Task<IEnumerable<PredictionDto>> GetPredictionsByGameAsync(int gameId)
     {
+        var predictions = await _dbContext.Predictions
+            .Include(p => p.User)
+            .Where(p => p.GameId == gameId)
+            .ToListAsync();
+
+        return _mapper.Map<IEnumerable<PredictionDto>>(predictions);
+    }
+
+    public async Task<PredictionDto> UpdatePredictionAsync(int predictionId, PredictionCreate changedDto, string uid)
+    {
+        var user = await _dbContext.Users.Where(p => p.AuthUID == uid).FirstOrDefaultAsync();
+
+        if (user == null)
+        {
+            throw new NotFoundException($"User with ID user not found");
+
+        }
         var existingPrediction = await _dbContext.Predictions
             .Include(p => p.User)
             .Include(p => p.Game)
@@ -70,7 +88,7 @@ public class PredictionService : IPredictionService
             throw new NotFoundException("Not found prediction");
         }
 
-        if (changedDto.UserId != existingPrediction.UserId)
+        if (user.Id != existingPrediction.UserId)
         {
             throw new NotFoundException("Not found prediction");
         }

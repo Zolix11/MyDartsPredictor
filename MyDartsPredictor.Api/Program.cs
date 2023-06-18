@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.Interfaces;
 using MyDartsPredictor.Bll.Services;
@@ -19,7 +21,20 @@ builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IPredictionService, PredictionService>();
 builder.Services.AddScoped<IResultService, ResultService>();
 
-
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = "https://securetoken.google.com/dotnethf-50e34";
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = "https://securetoken.google.com/dotnethf-50e34",
+            ValidateAudience = true,
+            ValidAudience = "dotnethf-50e34",
+            ValidateLifetime = true
+        };
+    });
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApiDocument();

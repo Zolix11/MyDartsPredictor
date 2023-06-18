@@ -35,13 +35,37 @@ namespace MyDartsPredictor.Api.Controllers
             }
         }
 
+        [HttpGet("game/{gameId}")]
+        public async Task<ActionResult<IEnumerable<PredictionDto>>> GetPredictionsByGameAsync(int gameId)
+        {
+            try
+            {
+                var predictions = await _predictionService.GetPredictionsByGameAsync(gameId);
+                return Ok(predictions);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
+
         [HttpPost]
         [ActionName(nameof(GetPredictionByIdAsync))]
         public async Task<ActionResult<PredictionDto>> CreatePredictionAsync(PredictionCreate predictionDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             try
             {
-                var createdPrediction = await _predictionService.CreatePredictionAsync(predictionDto);
+                var createdPrediction = await _predictionService.CreatePredictionAsync(predictionDto, uid);
                 return CreatedAtAction(nameof(GetPredictionByIdAsync), new { id = createdPrediction.Id }, createdPrediction);
             }
             catch (Exception ex)
@@ -53,9 +77,14 @@ namespace MyDartsPredictor.Api.Controllers
         [HttpPut("{predictionId}")]
         public async Task<ActionResult<PredictionDto>> UpdatePredictionAsync(int predictionId, PredictionCreate predictionDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             try
             {
-                var updatedPrediction = await _predictionService.UpdatePredictionAsync(predictionId, predictionDto);
+                var updatedPrediction = await _predictionService.UpdatePredictionAsync(predictionId, predictionDto, uid);
                 return Ok(updatedPrediction);
             }
             catch (NotFoundException ex)

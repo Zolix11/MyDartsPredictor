@@ -41,9 +41,11 @@ namespace MyDartsPredictor.Api.Controllers
         [ActionName(nameof(GetGameByIdAsync))]
         public async Task<ActionResult<GameDto>> CreateGameAsync(GameCreate gameDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+
             try
             {
-                var createdGame = await _gameService.CreateGameAsync(gameDto);
+                var createdGame = await _gameService.CreateGameAsync(gameDto, uid);
                 return CreatedAtAction(nameof(GetGameByIdAsync), new { id = createdGame.Id }, createdGame);
             }
             catch (Exception ex)
@@ -55,9 +57,11 @@ namespace MyDartsPredictor.Api.Controllers
         [HttpDelete("{gameId}")]
         public async Task<ActionResult> DeleteGameAsync(int gameId, [FromBody] int founderUserId)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+
             try
             {
-                await _gameService.DeleteGameAsync(gameId, founderUserId);
+                await _gameService.DeleteGameAsync(gameId, uid);
                 return NoContent();
             }
             catch (NotFoundException ex)

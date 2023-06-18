@@ -6,6 +6,6 @@ namespace MyDartsPredictor.Bll.Interfaces;
 public interface IGameService
 {
     Task<GameDto> GetGameByIdAsync(int gameId);
-    Task<GameDto> CreateGameAsync(GameCreate gameDto);
-    Task DeleteGameAsync(int gameId, int founderId);
+    Task<GameDto> CreateGameAsync(GameCreate gameDto, string uid);
+    Task DeleteGameAsync(int gameId, string uid);
 }

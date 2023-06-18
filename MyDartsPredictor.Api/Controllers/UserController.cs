@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.SimplifiedDtos;
 
 namespace MyDartsPredictor.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/users")]
     public class UserController : ControllerBase
@@ -51,13 +53,32 @@ namespace MyDartsPredictor.Api.Controllers
             }
         }
 
+        [HttpGet("login")]
+        public async Task<ActionResult<UserDto>> GetUserByAuthIdAsync()
+        {
+
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            try
+            {
+                var user = await _userService.GetUserByAuthidAsync(uid);
+                return Ok(user);
+
+            }
+            catch (Exception ex)
+            {
+                // Handle and log the exception
+                return StatusCode(500, "An error occurred while retrieving the user.");
+            }
+        }
+
         [HttpPost]
         [ActionName(nameof(GetUserByIdAsync))]
         public async Task<ActionResult<UserDto>> CreateUserAsync([FromBody] UserCreate userDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
             try
             {
-                var createdUser = await _userService.CreateUserAsync(userDto);
+                var createdUser = await _userService.CreateUserAsync(userDto, uid);
                 return CreatedAtAction(nameof(GetUserByIdAsync), new { userId = createdUser.Id }, createdUser);
 
             }
