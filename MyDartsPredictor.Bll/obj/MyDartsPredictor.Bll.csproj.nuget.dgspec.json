@@ -54,6 +54,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Hashids.net": {
+              "target": "Package",
+              "version": "[1.7.0, )"
             }
           },
           "imports": [

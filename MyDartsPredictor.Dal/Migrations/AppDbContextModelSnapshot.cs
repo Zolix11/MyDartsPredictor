@@ -29,8 +29,9 @@ namespace MyDartsPredictor.Dal.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("MatchDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("MatchDate")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Player1Name")
                         .IsRequired()
@@ -132,6 +133,15 @@ namespace MyDartsPredictor.Dal.Migrations
                     b.HasIndex("FounderUserId");
 
                     b.ToTable("Tournaments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FoundationTime = new DateTime(2023, 6, 20, 17, 11, 28, 985, DateTimeKind.Utc).AddTicks(2421),
+                            FounderUserId = 1,
+                            Name = "Szupi Tournament"
+                        });
                 });
 
             modelBuilder.Entity("MyDartsPredictor.Dal.Entities.User", b =>
@@ -152,7 +162,23 @@ namespace MyDartsPredictor.Dal.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthUID");
+
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthUID = "EJEgB8nlGpNt9DMN8ig5Gq6ETzA2",
+                            Name = "Zolix"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthUID = "CNH4Se4MIbXI3CwJhUEldSpnVoK2",
+                            Name = "Pista"
+                        });
                 });
 
             modelBuilder.Entity("MyDartsPredictor.Dal.Entities.UsersInTournament", b =>

@@ -47,7 +47,7 @@ public class GameService : IGameService
         var tournament = await _dbContext
             .Tournaments
             .Include(t => t.FounderUser)
-            .FirstOrDefaultAsync(t => t.Id == gameDto.tournamentId);
+            .FirstOrDefaultAsync(t => t.Id.Value == gameDto.tournamentId);
         if (tournament == null)
         {
             throw new NotFoundException($"Tournament with ID {gameDto.tournamentId} not found");
@@ -63,8 +63,8 @@ public class GameService : IGameService
         {
             Player1Name = gameDto.Player1Name,
             Player2Name = gameDto.Player2Name,
-            MatchDate = gameDto.MatchDate.ToUniversalTime(),
-            TournamentId = gameDto.tournamentId,
+            MatchDate = new DateWithTimeZone(gameDto.MatchDate, 1),
+            TournamentId = new TournamentId(gameDto.tournamentId),
         };
         _dbContext.Games.Add(newGame);
         await _dbContext.SaveChangesAsync();

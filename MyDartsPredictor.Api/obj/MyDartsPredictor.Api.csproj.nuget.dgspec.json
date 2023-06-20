@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[6.5.1, )"
             },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[13.2.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.18, )"
@@ -159,6 +163,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Hashids.net": {
+              "target": "Package",
+              "version": "[1.7.0, )"
             }
           },
           "imports": [

@@ -9,6 +9,7 @@
       "MyDartsPredictor.Bll/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "Hashids.net": "1.7.0",
           "MyDartsPredictor.Dal": "1.0.0"
         },
         "runtime": {
@@ -57,6 +58,14 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "Hashids.net/1.7.0": {
+        "runtime": {
+          "lib/net6.0/Hashids.net.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
           }
         }
       },
@@ -650,6 +659,13 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "Hashids.net/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TuQ8ns5c+eeIOHSgJdwCLb0nWzKqn2gCPSLFoz6nWdhw3tS5Wa43qrwRXT4UJT7XVgHqKssacVU1SGlAOWjeIg==",
+      "path": "hashids.net/1.7.0",
+      "hashPath": "hashids.net.1.7.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",

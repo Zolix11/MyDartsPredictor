@@ -15,12 +15,43 @@ public class AppDbContext : DbContext
     {
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.EnableSensitiveDataLogging();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        RelationshipsSetup(modelBuilder);
+        SeedData(modelBuilder);
+    }
+
+    private void SeedData(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .HasData(new[]
+            {
+                new User {Id = 1,Name = "Zolix", AuthUID = "EJEgB8nlGpNt9DMN8ig5Gq6ETzA2" },
+                new User {Id=2, Name = "Pista", AuthUID = "CNH4Se4MIbXI3CwJhUEldSpnVoK2" },
+            });
+        modelBuilder.Entity<Tournament>()
+            .HasData(new[]
+            {
+                new Tournament
+                {
+                    Id = new TournamentId(1), FounderUserId = 1, FoundationTime = DateTime.Now.ToUniversalTime(),
+                    Name = "Szupi Tournament"
+                }
+            });
+    }
+    private void RelationshipsSetup(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+        .HasIndex(p => p.AuthUID);
 
         modelBuilder.Entity<UsersInTournament>()
-            .HasKey(u => u.Id);
+        .HasKey(u => u.Id);
 
         modelBuilder.Entity<UsersInTournament>()
             .HasOne(u => u.User)
@@ -49,6 +80,11 @@ public class AppDbContext : DbContext
             .WithOne(g => g.Tournament)
             .HasForeignKey(g => g.TournamentId);
 
+        modelBuilder.Entity<Tournament>()
+            .Property(p => p.Id)
+            .HasConversion(stronglyId => stronglyId.Value, intID => new TournamentId(intID))
+            .ValueGeneratedOnAdd();
+
 
         modelBuilder.Entity<Game>()
             .HasOne(g => g.Tournament)
@@ -61,6 +97,9 @@ public class AppDbContext : DbContext
             .WithOne(r => r.Game)
             .HasForeignKey<Result>(r => r.GameId);
 
+        modelBuilder.Entity<Game>()
+            .Property(e => e.MatchDate)
+            .HasConversion(new DateWithTimeZoneConverter());
 
         modelBuilder.Entity<Game>()
             .HasMany(g => g.Predictions)
@@ -84,16 +123,6 @@ public class AppDbContext : DbContext
             .HasOne(p => p.Game)
             .WithMany(g => g.Predictions)
             .HasForeignKey(p => p.GameId);
-
-
-        base.OnModelCreating(modelBuilder);
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-        optionsBuilder.EnableSensitiveDataLogging();
-
     }
 
 }

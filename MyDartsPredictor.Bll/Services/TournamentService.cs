@@ -37,11 +37,11 @@ namespace MyDartsPredictor.Bll.Services
                 .Include(u => u.FounderUser)
                 .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
                 .Include(p => p.Games)
-                .FirstOrDefaultAsync(t => t.Id == tournamentId);
+                .FirstOrDefaultAsync(t => t.Id.Value == tournamentId);
             var tournamentDto = _mapper.Map<TournamentDto>(tournament);
 
             var listUsersWithPoints = await _dbContext.UsersInTournaments
-                .Where(p => p.TournamentId == tournamentId)
+                .Where(p => p.TournamentId.Value == tournamentId)
                 .ToListAsync();
 
 
@@ -96,7 +96,7 @@ namespace MyDartsPredictor.Bll.Services
                      .ThenInclude(uit => uit.User)
                  .Include(t => t.Games)
                      .ThenInclude(g => g.Result)
-                 .FirstOrDefaultAsync(t => t.Id == tournamentId);
+                 .FirstOrDefaultAsync(t => t.Id.Value == tournamentId);
 
             if (tournament == null)
             {
@@ -129,7 +129,7 @@ namespace MyDartsPredictor.Bll.Services
                 .Include(f => f.FounderUser)
                 .Include(u => u.UsersInTournament)
                        .ThenInclude(u => u.User)
-                .FirstOrDefaultAsync(p => p.Id == tournamentId);
+                .FirstOrDefaultAsync(p => p.Id.Value == tournamentId);
 
             if (tournament == null)
             {
@@ -153,7 +153,7 @@ namespace MyDartsPredictor.Bll.Services
 
             var newUserInTournament = new UsersInTournament
             {
-                TournamentId = tournamentId,
+                TournamentId = new TournamentId(tournamentId),
                 UserId = player.Id,
                 EarnedPoints = 0,
             };

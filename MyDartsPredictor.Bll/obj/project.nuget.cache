@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "CqmBaGLqgd5l9KMoEpsdvGHnGrU5pL2Qq0z2hzrGi0SykNYogSDNV9lDu9g4nFsyOrjN+H0zdcgxtENuq8pTNA==",
+  "dgSpecHash": "vI5/IMqZK6k3EDLBgV9sAWmCAAmRMo5OjWyWAxhXMv8u4u9fLRuuYfnokajL749HyqBoIH/C8DKUHP/03CsP5g==",
   "success": true,
   "projectFilePath": "C:\\Programozas\\dotnet\\MyDartsPredictor\\MyDartsPredictor.Bll\\MyDartsPredictor.Bll.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\hashids.net\\1.7.0\\hashids.net.1.7.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Galuska Zoltán\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

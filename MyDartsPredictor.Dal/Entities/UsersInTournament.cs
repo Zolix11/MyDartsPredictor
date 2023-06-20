@@ -3,7 +3,7 @@
 public class UsersInTournament
 {
     public int Id { get; set; }
-    public int TournamentId { get; set; }
+    public TournamentId TournamentId { get; set; }
     public int UserId { get; set; }
     public int EarnedPoints { get; set; }
 

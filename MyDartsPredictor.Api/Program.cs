@@ -13,7 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 /*builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));*/
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration["ConnectionStrings:DefaultConnection"]));
+    {
+        options.UseNpgsql(builder.Configuration["ConnectionStrings:DefaultConnection"],
+            opt =>
+            opt.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(5), errorCodesToAdd: null));
+    }
+);
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<ITournamentService, TournamentService>();

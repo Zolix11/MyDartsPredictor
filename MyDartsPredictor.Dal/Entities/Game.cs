@@ -3,10 +3,10 @@
 public class Game
 {
     public int Id { get; set; }
-    public DateTime MatchDate { get; set; }
+    public DateWithTimeZone MatchDate { get; set; }
     public string Player1Name { get; set; } = null!;
     public string Player2Name { get; set; } = null!;
-    public int TournamentId { get; set; }
+    public TournamentId TournamentId { get; set; }
     public int? ResultId { get; set; }
 
     // Navigation properties

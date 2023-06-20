@@ -1,8 +1,9 @@
 ﻿namespace MyDartsPredictor.Dal.Entities;
 
+public readonly record struct TournamentId(int Value);
 public class Tournament
 {
-    public int Id { get; set; }
+    public TournamentId Id { get; set; }
     public string Name { get; set; } = null!;
     public DateTime FoundationTime { get; set; }
     public int FounderUserId { get; set; }
