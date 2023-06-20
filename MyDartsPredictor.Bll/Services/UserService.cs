@@ -37,7 +37,8 @@ namespace MyDartsPredictor.Bll.Services
             var user = await _dbContext.Users
                 .Include(t => t.UsersInTournaments)
                   .ThenInclude(p => p.Tournament)
-                .Include(t => t.Predictions)
+                .Include(t => t.Predictions).ThenInclude(p => p.Game)
+                .Include(t => t.Predictions).ThenInclude(p => p.User)
                 .FirstOrDefaultAsync(t => t.Id == userId);
 
 
@@ -50,7 +51,7 @@ namespace MyDartsPredictor.Bll.Services
             var user = await _dbContext.Users
                 .Include(t => t.UsersInTournaments)
                 .ThenInclude(p => p.Tournament)
-                .Include(t => t.Predictions)
+                .Include(t => t.Predictions).ThenInclude(p => p.Game)
                 .FirstOrDefaultAsync(t => t.AuthUID == userId);
 
 

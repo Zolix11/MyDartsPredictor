@@ -45,8 +45,15 @@ public class ResultService : IResultService
         return resultDto;
     }
 
-    public async Task<ResultDto> CreateResultAsync(ResultCreate resultDto)
+    public async Task<ResultDto> CreateResultAsync(ResultCreate resultDto, string uid)
     {
+        var user = await _dbContext.Users.Where(p => p.AuthUID == uid).FirstOrDefaultAsync();
+
+        if (user == null)
+        {
+            throw new NotFoundException($"User with ID user not found");
+
+        }
         var game = await _dbContext.Games
             .Include(p => p.Tournament)
             .Include(p => p.Result)
@@ -55,7 +62,7 @@ public class ResultService : IResultService
         {
             throw new NotFoundException($"No game found for id {resultDto.GameId} result");
         }
-        if (game.Tournament.FounderUserId != resultDto.userId)
+        if (game.Tournament.FounderUserId != user.Id)
         {
             throw new NotFoundException($"You are not the founder of this tournament");
         }

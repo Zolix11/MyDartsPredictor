@@ -7,7 +7,7 @@ public interface IResultService
 {
     Task<ResultDto> GetResultByGameIdAsync(int gameId);
     Task<ResultDto> GetResultByIdAsync(int resultId);
-    Task<ResultDto> CreateResultAsync(ResultCreate resultDto);
+    Task<ResultDto> CreateResultAsync(ResultCreate resultDto, string uid);
     Task<ResultDto> UpdateResultAsync(int resultId, ResultCreate resultDto);
     Task DeleteResultAsync(int resultId);
 }

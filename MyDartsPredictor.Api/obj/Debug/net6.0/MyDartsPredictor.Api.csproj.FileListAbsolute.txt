@@ -48,16 +48,6 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Mic
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Namotion.Reflection.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NJsonSchema.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NJsonSchema.Yaml.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.Annotations.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.AspNetCore.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.Core.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.Core.Yaml.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.Generation.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\NSwag.Generation.AspNetCore.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.CodeDom.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.Drawing.Common.dll
@@ -69,7 +59,6 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Sys
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.Text.Json.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\YamlDotNet.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -107,3 +96,7 @@ C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\obj\Debug\net6.0\MyD
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Npgsql.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

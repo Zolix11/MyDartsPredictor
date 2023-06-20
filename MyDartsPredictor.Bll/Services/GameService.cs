@@ -63,7 +63,7 @@ public class GameService : IGameService
         {
             Player1Name = gameDto.Player1Name,
             Player2Name = gameDto.Player2Name,
-            MatchDate = gameDto.MatchDate,
+            MatchDate = gameDto.MatchDate.ToUniversalTime(),
             TournamentId = gameDto.tournamentId,
         };
         _dbContext.Games.Add(newGame);

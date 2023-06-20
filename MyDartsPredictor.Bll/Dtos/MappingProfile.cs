@@ -13,8 +13,8 @@ namespace MyDartsPredictor.Bll.Dtos
              ));
 
             CreateMap<Tournament, TournamentDto>()
-              .ForMember(dest => dest.FounderUser, opt => opt.MapFrom(src => src.FounderUser))
-              .ForMember(dest => dest.Games, opt => opt.MapFrom(src => src.Games))
+                .ForMember(dest => dest.FounderUserId, opt => opt.MapFrom(src => src.FounderUser.Id))
+                .ForMember(dest => dest.Games, opt => opt.MapFrom(src => src.Games))
               .ForMember(dest => dest.UsersWithPoints, opt => opt.MapFrom(src => src.UsersInTournament
                   .Where(uit => uit.TournamentId == src.Id)
                   .Select(uit => new UserWithPointsDto
@@ -40,11 +40,9 @@ namespace MyDartsPredictor.Bll.Dtos
 
             CreateMap<Prediction, PredictionDto>()
               .ForMember(dest => dest.Game, opt => opt.MapFrom(src => src.Game))
-              .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
               .ForMember(dest => dest.PredictionWinner, opt => opt.MapFrom(src => src.PredictionWinner))
               .ForMember(dest => dest.PredictionScore, opt => opt.MapFrom(src => src.PredictionScore))
               .ForMember(dest => dest.GameId, opt => opt.MapFrom(src => src.GameId))
-              .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
               .ReverseMap();
 
 

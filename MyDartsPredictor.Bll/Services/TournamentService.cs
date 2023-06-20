@@ -23,7 +23,8 @@ namespace MyDartsPredictor.Bll.Services
         public async Task<IEnumerable<TournamentDto>> GetAllTournamentsAsync()
         {
             var tournaments = await _dbContext.Tournaments
-                 .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
+                .Include(u => u.FounderUser)
+                .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
                  .Include(p => p.Games)
                  .ToListAsync();
 

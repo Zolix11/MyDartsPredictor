@@ -104,23 +104,10 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTournament(int id, int userId)
+        public async Task<IActionResult> DeleteTournament(int id)
         {
-            try
-            {
-                TournamentDto tournament = await _tournamentService.GetTournamentByIdAsync(id);
-                if (tournament != null && tournament.FounderUser.Id == userId)
-                {
-                    await _tournamentService.DeleteTournamentAsync(id);
-                    return NoContent();
 
-                }
-                return Unauthorized("You are not the founder user");
-            }
-            catch (NotFoundException)
-            {
-                return NotFound();
-            }
+            return NotFound();
         }
     }
 }

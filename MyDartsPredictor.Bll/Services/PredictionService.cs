@@ -51,19 +51,22 @@ public class PredictionService : IPredictionService
     {
         var prediction = await _dbContext.Predictions
             .Include(p => p.Game).ThenInclude(g => g.Tournament)
-            .Include(p => p.User)
+            .Include(p => p.User).ThenInclude(p => p.Predictions)
             .SingleOrDefaultAsync(p => p.Id == predictionId);
         if (prediction == null)
         {
             throw new NotFoundException("Prediction not found");
         }
-        return _mapper.Map<PredictionDto>(prediction);
+        var predictionDto = _mapper.Map<PredictionDto>(prediction);
+        return predictionDto;
+
     }
 
     public async Task<IEnumerable<PredictionDto>> GetPredictionsByGameAsync(int gameId)
     {
         var predictions = await _dbContext.Predictions
             .Include(p => p.User)
+            .Include(p => p.Game)
             .Where(p => p.GameId == gameId)
             .ToListAsync();
 

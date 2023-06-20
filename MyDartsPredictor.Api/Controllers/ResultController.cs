@@ -57,9 +57,14 @@ namespace MyDartsPredictor.Api.Controllers
         [ActionName(nameof(GetResultByIdAsync))]
         public async Task<ActionResult<ResultDto>> CreateResultAsync(ResultCreate resultDto)
         {
+            var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
+            if (uid == null)
+            {
+                return NotFound();
+            }
             try
             {
-                var createdResult = await _resultService.CreateResultAsync(resultDto);
+                var createdResult = await _resultService.CreateResultAsync(resultDto, uid);
                 return CreatedAtAction(nameof(GetResultByIdAsync), new { id = createdResult.Id }, createdResult);
             }
             catch (NotFoundException ex)
