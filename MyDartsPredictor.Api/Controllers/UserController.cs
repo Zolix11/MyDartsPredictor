@@ -11,10 +11,12 @@ namespace MyDartsPredictor.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly Bll.Interfaces.IUserSevice _userService;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(Bll.Interfaces.IUserSevice userService)
+        public UserController(Bll.Interfaces.IUserSevice userService, ILogger<UserController> logger)
         {
             _userService = userService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -27,7 +29,7 @@ namespace MyDartsPredictor.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while retrieving users.");
                 return StatusCode(500, "An error occurred while retrieving users.");
             }
         }
@@ -48,7 +50,7 @@ namespace MyDartsPredictor.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while retrieving the user.");
                 return StatusCode(500, "An error occurred while retrieving the user.");
             }
         }
@@ -56,17 +58,19 @@ namespace MyDartsPredictor.Api.Controllers
         [HttpGet("login")]
         public async Task<ActionResult<UserDto>> GetUserByAuthIdAsync()
         {
-
             var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
             try
             {
+                if (uid == null)
+                {
+                    return NotFound();
+                }
                 var user = await _userService.GetUserByAuthidAsync(uid);
                 return Ok(user);
-
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while retrieving the user.");
                 return StatusCode(500, "An error occurred while retrieving the user.");
             }
         }
@@ -78,13 +82,16 @@ namespace MyDartsPredictor.Api.Controllers
             var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
             try
             {
+                if (uid == null)
+                {
+                    return NotFound();
+                }
                 var createdUser = await _userService.CreateUserAsync(userDto, uid);
                 return CreatedAtAction(nameof(GetUserByIdAsync), new { userId = createdUser.Id }, createdUser);
-
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while creating the user.");
                 return StatusCode(500, "An error occurred while creating the user.");
             }
         }
@@ -105,7 +112,7 @@ namespace MyDartsPredictor.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while updating the user.");
                 return StatusCode(500, "An error occurred while updating the user.");
             }
         }
@@ -120,7 +127,7 @@ namespace MyDartsPredictor.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Handle and log the exception
+                _logger.LogError(ex, "An error occurred while deleting the user.");
                 return StatusCode(500, "An error occurred while deleting the user.");
             }
         }

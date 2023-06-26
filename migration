@@ -1,0 +1,18 @@
+# Base image
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /source
+
+# Copy the project files
+COPY . .
+RUN dotnet restore "./MyDartsPredictor.Dal/MyDartsPredictor.Dal.csproj"
+RUN dotnet publish "./MyDartsPredictor.Dal/MyDartsPredictor.Dal.csproj" -c release -o /app --no-restore
+
+# Set the working directory
+WORKDIR /app
+
+# Set the environment variables
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENV ConnectionStrings__DefaultConnection=<Your_Connection_String>
+
+# Perform database migration
+CMD dotnet ef database update --project MyDartsPredictor.Dal

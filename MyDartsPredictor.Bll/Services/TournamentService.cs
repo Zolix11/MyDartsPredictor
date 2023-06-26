@@ -31,17 +31,17 @@ namespace MyDartsPredictor.Bll.Services
             return _mapper.Map<IEnumerable<TournamentDto>>(tournaments);
         }
 
-        public async Task<TournamentDto> GetTournamentByIdAsync(int tournamentId)
+        public async Task<TournamentDto> GetTournamentByIdAsync(TournamentId tournamentId)
         {
             var tournament = await _dbContext.Tournaments
                 .Include(u => u.FounderUser)
                 .Include(u => u.UsersInTournament).ThenInclude(u => u.User)
                 .Include(p => p.Games)
-                .FirstOrDefaultAsync(t => t.Id.Value == tournamentId);
+                .FirstOrDefaultAsync(t => t.Id == tournamentId);
             var tournamentDto = _mapper.Map<TournamentDto>(tournament);
 
             var listUsersWithPoints = await _dbContext.UsersInTournaments
-                .Where(p => p.TournamentId.Value == tournamentId)
+                .Where(p => p.TournamentId == tournamentId)
                 .ToListAsync();
 
 
@@ -74,9 +74,9 @@ namespace MyDartsPredictor.Bll.Services
             return _mapper.Map<TournamentDto>(addedTournament);
         }
 
-        public async Task<TournamentDto> UpdateTournamentAsync(int tournamentId, TournamentDto tournamentDto)
+        public async Task<TournamentDto> UpdateTournamentAsync(TournamentId tournamentId, TournamentDto tournamentDto)
         {
-            var existingTournament = await _dbContext.Tournaments.FindAsync(tournamentId);
+            var existingTournament = await _dbContext.Tournaments.FindAsync(tournamentId.Value);
             if (existingTournament == null)
             {
                 throw new NotFoundException();
@@ -122,14 +122,14 @@ namespace MyDartsPredictor.Bll.Services
             throw new NotFoundException("User not found");
         }
 
-        public async Task JoinPlayerToTournamentAsync(int tournamentId, string Uid)
+        public async Task JoinPlayerToTournamentAsync(TournamentId tournamentId, string Uid)
         {
             var tournament = await _dbContext
                 .Tournaments
                 .Include(f => f.FounderUser)
                 .Include(u => u.UsersInTournament)
                        .ThenInclude(u => u.User)
-                .FirstOrDefaultAsync(p => p.Id.Value == tournamentId);
+                .FirstOrDefaultAsync(p => p.Id == tournamentId);
 
             if (tournament == null)
             {
@@ -153,7 +153,7 @@ namespace MyDartsPredictor.Bll.Services
 
             var newUserInTournament = new UsersInTournament
             {
-                TournamentId = new TournamentId(tournamentId),
+                TournamentId = tournamentId,
                 UserId = player.Id,
                 EarnedPoints = 0,
             };

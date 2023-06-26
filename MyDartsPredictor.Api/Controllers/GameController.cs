@@ -45,6 +45,10 @@ namespace MyDartsPredictor.Api.Controllers
 
             try
             {
+                if (uid == null)
+                {
+                    return NotFound();
+                }
                 var createdGame = await _gameService.CreateGameAsync(gameDto, uid);
                 return CreatedAtAction(nameof(GetGameByIdAsync), new { id = createdGame.Id }, createdGame);
             }
@@ -58,7 +62,10 @@ namespace MyDartsPredictor.Api.Controllers
         public async Task<ActionResult> DeleteGameAsync(int gameId, [FromBody] int founderUserId)
         {
             var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
-
+            if (uid == null)
+            {
+                return NoContent();
+            }
             try
             {
                 await _gameService.DeleteGameAsync(gameId, uid);

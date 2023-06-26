@@ -4,6 +4,7 @@ using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.Expections;
 using MyDartsPredictor.Bll.Interfaces;
 using MyDartsPredictor.Bll.SimplifiedDtos;
+using MyDartsPredictor.Dal.Entities;
 
 namespace MyDartsPredictor.Api.Controllers
 {
@@ -36,7 +37,7 @@ namespace MyDartsPredictor.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTournamentById(int id)
         {
-            TournamentDto tournament = await _tournamentService.GetTournamentByIdAsync(id);
+            TournamentDto tournament = await _tournamentService.GetTournamentByIdAsync(new TournamentId(id));
             if (tournament == null)
             {
                 return NotFound();
@@ -45,7 +46,7 @@ namespace MyDartsPredictor.Api.Controllers
         }
 
         [HttpPost("{tournamentId}/join")]
-        public async Task<IActionResult> JoinPlayerToTournament(int tournamentId)
+        public async Task<IActionResult> JoinPlayerToTournament(TournamentId tournamentId)
         {
             var uid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "user_id")?.Value;
             if (uid == null)
@@ -94,7 +95,7 @@ namespace MyDartsPredictor.Api.Controllers
         {
             try
             {
-                TournamentDto updatedTournament = await _tournamentService.UpdateTournamentAsync(id, tournamentDto);
+                TournamentDto updatedTournament = await _tournamentService.UpdateTournamentAsync(new TournamentId(id), tournamentDto);
                 return Ok(updatedTournament);
             }
             catch (NotFoundException)

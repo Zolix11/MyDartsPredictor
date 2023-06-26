@@ -1,0 +1,963 @@
+2023-06-25 20:32:06.565 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-06-25 20:32:06.747 +02:00 [DBG] Hosting starting
+2023-06-25 20:32:06.797 +02:00 [INF] User profile is available. Using 'C:\Users\Galuska Zoltán\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-25 20:32:06.801 +02:00 [DBG] Reading data from file 'C:\Users\Galuska Zoltán\AppData\Local\ASP.NET\DataProtection-Keys\key-6617b85d-6bae-4c17-9697-4d7715bc827d.xml'.
+2023-06-25 20:32:06.812 +02:00 [DBG] Found key {6617b85d-6bae-4c17-9697-4d7715bc827d}.
+2023-06-25 20:32:06.825 +02:00 [DBG] Considering key {6617b85d-6bae-4c17-9697-4d7715bc827d} with expiration date 2023-07-12 20:08:25Z as default key.
+2023-06-25 20:32:06.830 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-06-25 20:32:06.836 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-06-25 20:32:06.838 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-06-25 20:32:06.845 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-06-25 20:32:06.848 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-06-25 20:32:06.853 +02:00 [DBG] Using key {6617b85d-6bae-4c17-9697-4d7715bc827d} as the default key.
+2023-06-25 20:32:06.854 +02:00 [DBG] Key ring with default key {6617b85d-6bae-4c17-9697-4d7715bc827d} was loaded during application startup.
+2023-06-25 20:32:07.037 +02:00 [INF] Now listening on: http://localhost:5299
+2023-06-25 20:32:07.039 +02:00 [DBG] Loaded hosting startup assembly MyDartsPredictor.Api
+2023-06-25 20:32:07.040 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-06-25 20:32:07.042 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-06-25 20:32:07.044 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-25 20:32:07.045 +02:00 [INF] Hosting environment: Development
+2023-06-25 20:32:07.046 +02:00 [INF] Content root path: C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\
+2023-06-25 20:32:07.048 +02:00 [DBG] Hosting started
+2023-06-25 20:32:07.556 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" accepted.
+2023-06-25 20:32:07.556 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" accepted.
+2023-06-25 20:32:07.559 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" started.
+2023-06-25 20:32:07.559 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" started.
+2023-06-25 20:32:07.598 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" received FIN.
+2023-06-25 20:32:07.598 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" received FIN.
+2023-06-25 20:32:07.605 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" sending FIN because: "The client closed the connection."
+2023-06-25 20:32:07.605 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" sending FIN because: "The client closed the connection."
+2023-06-25 20:32:07.610 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" disconnecting.
+2023-06-25 20:32:07.611 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" disconnecting.
+2023-06-25 20:32:07.616 +02:00 [DBG] Connection id "0HMRLL9TJPLUS" stopped.
+2023-06-25 20:32:07.616 +02:00 [DBG] Connection id "0HMRLL9TJPLUT" stopped.
+2023-06-25 20:32:07.803 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" accepted.
+2023-06-25 20:32:07.804 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" started.
+2023-06-25 20:32:07.805 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" accepted.
+2023-06-25 20:32:07.806 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" started.
+2023-06-25 20:32:07.868 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/swagger/index.html - -
+2023-06-25 20:32:07.909 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-06-25 20:32:08.081 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-06-25 20:32:08.201 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-06-25 20:32:08.203 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" completed keep alive response.
+2023-06-25 20:32:08.207 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/swagger/index.html - - - 200 - text/html;charset=utf-8 345.7634ms
+2023-06-25 20:32:08.225 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/_framework/aspnetcore-browser-refresh.js - -
+2023-06-25 20:32:08.231 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" completed keep alive response.
+2023-06-25 20:32:08.232 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 6.6492ms
+2023-06-25 20:32:08.327 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/_vs/browserLink - -
+2023-06-25 20:32:08.376 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" completed keep alive response.
+2023-06-25 20:32:08.377 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.6081ms
+2023-06-25 20:32:08.500 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/swagger/v1/swagger.json - -
+2023-06-25 20:32:08.628 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" completed keep alive response.
+2023-06-25 20:32:08.630 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 129.4385ms
+2023-06-25 20:32:55.384 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" received FIN.
+2023-06-25 20:32:55.397 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" received FIN.
+2023-06-25 20:32:55.424 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" sending FIN because: "The client closed the connection."
+2023-06-25 20:32:55.433 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" disconnecting.
+2023-06-25 20:32:55.445 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" disconnecting.
+2023-06-25 20:32:55.482 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" sending FIN because: "The client closed the connection."
+2023-06-25 20:32:55.486 +02:00 [DBG] Connection id "0HMRLL9TJPLUV" stopped.
+2023-06-25 20:32:55.490 +02:00 [DBG] Connection id "0HMRLL9TJPLUU" stopped.
+2023-06-25 20:37:34.180 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" accepted.
+2023-06-25 20:37:34.220 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" started.
+2023-06-25 20:37:34.236 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - -
+2023-06-25 20:37:34.240 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:37:34.241 +02:00 [DBG] The request path /api/users/login does not match a supported file type
+2023-06-25 20:37:34.274 +02:00 [DBG] 2 candidate(s) found for the request path '/api/users/login'
+2023-06-25 20:37:34.282 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/login' is valid for the request path '/api/users/login'
+2023-06-25 20:37:34.283 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/{userId}' is valid for the request path '/api/users/login'
+2023-06-25 20:37:34.285 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:37:35.173 +02:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-06-25 20:37:35.184 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-06-25 20:37:35.193 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-25 20:37:35.195 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" completed keep alive response.
+2023-06-25 20:37:35.196 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - - - 401 0 - 959.7518ms
+2023-06-25 20:37:38.203 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" received FIN.
+2023-06-25 20:37:38.205 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" disconnecting.
+2023-06-25 20:37:38.214 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" sending FIN because: "The client closed the connection."
+2023-06-25 20:37:38.220 +02:00 [DBG] Connection id "0HMRLL9TJPLV0" stopped.
+2023-06-25 20:37:48.425 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" accepted.
+2023-06-25 20:37:48.426 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" started.
+2023-06-25 20:37:48.429 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - -
+2023-06-25 20:37:48.430 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:37:48.430 +02:00 [DBG] The request path /api/users/login does not match a supported file type
+2023-06-25 20:37:48.432 +02:00 [DBG] 2 candidate(s) found for the request path '/api/users/login'
+2023-06-25 20:37:48.433 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/login' is valid for the request path '/api/users/login'
+2023-06-25 20:37:48.434 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/{userId}' is valid for the request path '/api/users/login'
+2023-06-25 20:37:48.435 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:37:48.558 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:37:48.560 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:37:48.562 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:37:48.563 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:37:48.595 +02:00 [INF] Route matched with {action = "GetUserByAuthId", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyDartsPredictor.Bll.Dtos.UserDto]] GetUserByAuthIdAsync() on controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api).
+2023-06-25 20:37:48.597 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:37:48.599 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:37:48.600 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:37:48.601 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:37:48.602 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:37:48.605 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:37:48.847 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-06-25 20:37:49.035 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:37:49.091 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:37:49.112 +02:00 [DBG] An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:EnableSensitiveDataLogging'.
+2023-06-25 20:37:49.958 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-06-25 20:37:50.275 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:37:50.362 +02:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Include(t => t.UsersInTournaments)
+    .ThenInclude(p => p.Tournament)
+    .Include(t => t.Predictions)
+    .ThenInclude(p => p.Game)
+    .FirstOrDefault(t => t.AuthUID == __userId_0)'
+2023-06-25 20:37:50.459 +02:00 [DBG] Including navigation: 'User.UsersInTournaments'.
+2023-06-25 20:37:50.461 +02:00 [DBG] Including navigation: 'User.Predictions'.
+2023-06-25 20:37:50.487 +02:00 [DBG] Including navigation: 'UsersInTournament.Tournament'.
+2023-06-25 20:37:50.490 +02:00 [DBG] Including navigation: 'Prediction.Game'.
+2023-06-25 20:37:50.891 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-06-25 20:37:50.916 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.AuthUID (string) Required Index, 1], [Property: User.Name (string) Required, 2] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: UsersInTournament.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 3], [Property: UsersInTournament.EarnedPoints (int) Required, 4], [Property: UsersInTournament.TournamentId (TournamentId) Required FK Index, 5], [Property: UsersInTournament.UserId (int) Required FK Index, 6] }
+                3 -> Dictionary<IProperty, int> { [Property: Tournament.Id (TournamentId) Required PK AfterSave:Throw ValueGenerated.OnAdd, 7], [Property: Tournament.FoundationTime (DateTime) Required, 8], [Property: Tournament.FounderUserId (int) Required FK Index, 9], [Property: Tournament.Name (string) Required, 10] }
+                4 -> 3
+                5 -> 7
+                6 -> Dictionary<IProperty, int> { [Property: Prediction.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Prediction.GameId (int) Required FK Index, 12], [Property: Prediction.PredictionScore (string) Required, 13], [Property: Prediction.PredictionWinner (int) Required, 14], [Property: Prediction.UserId (int) Required FK Index, 15] }
+                7 -> Dictionary<IProperty, int> { [Property: Game.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 16], [Property: Game.MatchDate (DateWithTimeZone) Required, 17], [Property: Game.Player1Name (string) Required, 18], [Property: Game.Player2Name (string) Required, 19], [Property: Game.ResultId (int?), 20], [Property: Game.TournamentId (TournamentId) Required FK Index, 21] }
+                8 -> 11
+                9 -> 16
+            SELECT t.Id, t.AuthUID, t.Name, t0.Id, t0.EarnedPoints, t0.TournamentId, t0.UserId, t0.Id0, t0.FoundationTime, t0.FounderUserId, t0.Name, t2.Id, t2.GameId, t2.PredictionScore, t2.PredictionWinner, t2.UserId, t2.Id0, t2.MatchDate, t2.Player1Name, t2.Player2Name, t2.ResultId, t2.TournamentId
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.AuthUID, u.Name
+                FROM Users AS u
+                WHERE u.AuthUID == @__userId_0
+            ) AS t
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.EarnedPoints, u0.TournamentId, u0.UserId, t1.Id AS Id0, t1.FoundationTime, t1.FounderUserId, t1.Name
+                FROM UsersInTournaments AS u0
+                INNER JOIN Tournaments AS t1 ON u0.TournamentId == t1.Id
+            ) AS t0 ON t.Id == t0.UserId
+            LEFT JOIN 
+            (
+                SELECT p.Id, p.GameId, p.PredictionScore, p.PredictionWinner, p.UserId, g.Id AS Id0, g.MatchDate, g.Player1Name, g.Player2Name, g.ResultId, g.TournamentId
+                FROM Predictions AS p
+                INNER JOIN Games AS g ON p.GameId == g.Id
+            ) AS t2 ON t.Id == t2.UserId
+            ORDER BY t.Id ASC, t0.Id ASC, t0.Id0 ASC, t2.Id ASC), 
+        ReaderColumn[] { ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<DateTime>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int> }, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        AppDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-06-25 20:37:50.995 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:37:51.000 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:37:51.077 +02:00 [DBG] Created DbConnection. (72ms).
+2023-06-25 20:37:51.088 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (87ms).
+2023-06-25 20:37:51.093 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (98ms).
+2023-06-25 20:37:51.105 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:37:51.420 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:37:51.443 +02:00 [DBG] Executing DbCommand [Parameters=[@__userId_0='AkP0tghWHrU9RDUh3lnjxpDxv6Z2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:37:51.547 +02:00 [INF] Executed DbCommand (110ms) [Parameters=[@__userId_0='AkP0tghWHrU9RDUh3lnjxpDxv6Z2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:37:51.596 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:37:51.605 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 18ms reading results.
+2023-06-25 20:37:51.615 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:37:51.626 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (10ms).
+2023-06-25 20:37:51.645 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2547.5583ms.
+2023-06-25 20:37:51.652 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:37:51.656 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:37:51.657 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:37:51.657 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:37:51.658 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter' and content type '' to write the response.
+2023-06-25 20:37:51.659 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-06-25 20:37:51.667 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) in 3058.1745ms
+2023-06-25 20:37:51.668 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:37:51.671 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" completed keep alive response.
+2023-06-25 20:37:51.675 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:37:51.684 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:37:51.689 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (5ms).
+2023-06-25 20:37:51.692 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - - - 204 0 - 3262.9379ms
+2023-06-25 20:37:54.677 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" received FIN.
+2023-06-25 20:37:54.678 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" sending FIN because: "The client closed the connection."
+2023-06-25 20:37:54.679 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" disconnecting.
+2023-06-25 20:37:54.680 +02:00 [DBG] Connection id "0HMRLL9TJPLV1" stopped.
+2023-06-25 20:39:19.788 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" accepted.
+2023-06-25 20:39:19.789 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" started.
+2023-06-25 20:39:19.890 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - -
+2023-06-25 20:39:19.900 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:39:19.901 +02:00 [DBG] The request path /api/users/login does not match a supported file type
+2023-06-25 20:39:19.902 +02:00 [DBG] 2 candidate(s) found for the request path '/api/users/login'
+2023-06-25 20:39:19.903 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/login' is valid for the request path '/api/users/login'
+2023-06-25 20:39:19.904 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/{userId}' is valid for the request path '/api/users/login'
+2023-06-25 20:39:19.905 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:19.908 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:39:19.908 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:39:19.910 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:39:19.912 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:19.913 +02:00 [INF] Route matched with {action = "GetUserByAuthId", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyDartsPredictor.Bll.Dtos.UserDto]] GetUserByAuthIdAsync() on controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api).
+2023-06-25 20:39:19.915 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:39:19.916 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:39:19.918 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:39:19.920 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:39:19.921 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:39:19.923 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:19.935 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:19.952 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:39:19.995 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:39:20.000 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:39:20.000 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:39:20.001 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:39:20.002 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-06-25 20:39:20.003 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-06-25 20:39:20.004 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:20.005 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:20.006 +02:00 [DBG] Executing DbCommand [Parameters=[@__userId_0='AkP0tghWHrU9RDUh3lnjxpDxv6Z2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:20.015 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='AkP0tghWHrU9RDUh3lnjxpDxv6Z2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:20.018 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:20.019 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2023-06-25 20:39:20.020 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:20.021 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:39:20.023 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 69.1292ms.
+2023-06-25 20:39:20.024 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:39:20.026 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:39:20.026 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:39:20.027 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:39:20.028 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter' and content type '' to write the response.
+2023-06-25 20:39:20.029 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-06-25 20:39:20.030 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) in 107.3829ms
+2023-06-25 20:39:20.031 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:20.032 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" completed keep alive response.
+2023-06-25 20:39:20.032 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:39:20.033 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:20.034 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:39:20.035 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - - - 204 0 - 146.0361ms
+2023-06-25 20:39:23.060 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" received FIN.
+2023-06-25 20:39:23.061 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" sending FIN because: "The client closed the connection."
+2023-06-25 20:39:23.063 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" disconnecting.
+2023-06-25 20:39:23.064 +02:00 [DBG] Connection id "0HMRLL9TJPLV2" stopped.
+2023-06-25 20:39:31.940 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" accepted.
+2023-06-25 20:39:31.941 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" started.
+2023-06-25 20:39:31.943 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - -
+2023-06-25 20:39:31.943 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:39:31.944 +02:00 [DBG] The request path /api/users/login does not match a supported file type
+2023-06-25 20:39:31.945 +02:00 [DBG] 2 candidate(s) found for the request path '/api/users/login'
+2023-06-25 20:39:31.946 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/login' is valid for the request path '/api/users/login'
+2023-06-25 20:39:31.947 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/{userId}' is valid for the request path '/api/users/login'
+2023-06-25 20:39:31.948 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:31.949 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:39:31.950 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:39:31.951 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:39:31.951 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:31.952 +02:00 [INF] Route matched with {action = "GetUserByAuthId", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyDartsPredictor.Bll.Dtos.UserDto]] GetUserByAuthIdAsync() on controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api).
+2023-06-25 20:39:31.954 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:39:31.955 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:39:31.955 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:39:31.957 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:39:31.958 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:39:31.959 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:31.962 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:31.975 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:39:32.017 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:39:32.026 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:39:32.027 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:39:32.028 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:39:32.028 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-06-25 20:39:32.030 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-06-25 20:39:32.031 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:32.032 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:32.033 +02:00 [DBG] Executing DbCommand [Parameters=[@__userId_0='ubCxI6T9OaUTmaq0pnCJykOiEzP2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:32.036 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='ubCxI6T9OaUTmaq0pnCJykOiEzP2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:32.039 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:32.041 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2023-06-25 20:39:32.042 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:32.043 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:39:32.044 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 67.7596ms.
+2023-06-25 20:39:32.045 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:39:32.047 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:39:32.048 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:39:32.048 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:39:32.049 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter' and content type '' to write the response.
+2023-06-25 20:39:32.050 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-06-25 20:39:32.051 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) in 91.5303ms
+2023-06-25 20:39:32.052 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:32.053 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" completed keep alive response.
+2023-06-25 20:39:32.054 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:39:32.055 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:32.056 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:39:32.057 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - - - 204 0 - 114.7104ms
+2023-06-25 20:39:35.063 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" received FIN.
+2023-06-25 20:39:35.064 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" sending FIN because: "The client closed the connection."
+2023-06-25 20:39:35.066 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" disconnecting.
+2023-06-25 20:39:35.067 +02:00 [DBG] Connection id "0HMRLL9TJPLV3" stopped.
+2023-06-25 20:39:42.853 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" accepted.
+2023-06-25 20:39:42.854 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" started.
+2023-06-25 20:39:42.858 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - -
+2023-06-25 20:39:42.859 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:39:42.860 +02:00 [DBG] The request path /api/users/login does not match a supported file type
+2023-06-25 20:39:42.860 +02:00 [DBG] 2 candidate(s) found for the request path '/api/users/login'
+2023-06-25 20:39:42.861 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/login' is valid for the request path '/api/users/login'
+2023-06-25 20:39:42.863 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByIdAsync (MyDartsPredictor.Api)' with route pattern 'api/users/{userId}' is valid for the request path '/api/users/login'
+2023-06-25 20:39:42.864 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:42.865 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:39:42.866 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:39:42.867 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:39:42.867 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:42.868 +02:00 [INF] Route matched with {action = "GetUserByAuthId", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyDartsPredictor.Bll.Dtos.UserDto]] GetUserByAuthIdAsync() on controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api).
+2023-06-25 20:39:42.870 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:39:42.872 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:39:42.873 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:39:42.874 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:39:42.875 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:39:42.877 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:42.878 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:39:42.892 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:39:42.893 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:39:42.895 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:39:42.896 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:39:42.897 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:39:42.898 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-06-25 20:39:42.899 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-06-25 20:39:42.900 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:42.901 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:42.903 +02:00 [DBG] Executing DbCommand [Parameters=[@__userId_0='ubCxI6T9OaUTmaq0pnCJykOiEzP2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:42.908 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='ubCxI6T9OaUTmaq0pnCJykOiEzP2'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AuthUID", t."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."FoundationTime", t0."FounderUserId", t0."Name", t2."Id", t2."GameId", t2."PredictionScore", t2."PredictionWinner", t2."UserId", t2."Id0", t2."MatchDate", t2."Player1Name", t2."Player2Name", t2."ResultId", t2."TournamentId"
+FROM (
+    SELECT u."Id", u."AuthUID", u."Name"
+    FROM "Users" AS u
+    WHERE u."AuthUID" = @__userId_0
+    LIMIT 1
+) AS t
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", t1."Id" AS "Id0", t1."FoundationTime", t1."FounderUserId", t1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Tournaments" AS t1 ON u0."TournamentId" = t1."Id"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN (
+    SELECT p."Id", p."GameId", p."PredictionScore", p."PredictionWinner", p."UserId", g."Id" AS "Id0", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+    FROM "Predictions" AS p
+    INNER JOIN "Games" AS g ON p."GameId" = g."Id"
+) AS t2 ON t."Id" = t2."UserId"
+ORDER BY t."Id", t0."Id", t0."Id0", t2."Id"
+2023-06-25 20:39:42.910 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:42.911 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2023-06-25 20:39:42.913 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:39:42.914 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:39:42.916 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 22.4817ms.
+2023-06-25 20:39:42.917 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:39:42.919 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:39:42.919 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:39:42.920 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:39:42.921 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter' and content type '' to write the response.
+2023-06-25 20:39:42.922 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2023-06-25 20:39:42.923 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api) in 46.2129ms
+2023-06-25 20:39:42.924 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.UserController.GetUserByAuthIdAsync (MyDartsPredictor.Api)'
+2023-06-25 20:39:42.925 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" completed keep alive response.
+2023-06-25 20:39:42.926 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:39:42.926 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:39:42.927 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:39:42.929 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/users/login - - - 204 0 - 70.3997ms
+2023-06-25 20:39:45.931 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" received FIN.
+2023-06-25 20:39:45.932 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" sending FIN because: "The client closed the connection."
+2023-06-25 20:39:45.934 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" disconnecting.
+2023-06-25 20:39:45.935 +02:00 [DBG] Connection id "0HMRLL9TJPLV4" stopped.
+2023-06-25 20:40:16.332 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" accepted.
+2023-06-25 20:40:16.333 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" started.
+2023-06-25 20:40:16.392 +02:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5299/api/users application/json 18
+2023-06-25 20:40:16.393 +02:00 [DBG] POST requests are not supported
+2023-06-25 20:40:16.393 +02:00 [DBG] POST requests are not supported
+2023-06-25 20:40:16.395 +02:00 [DBG] 1 candidate(s) found for the request path '/api/users'
+2023-06-25 20:40:16.396 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)' with route pattern 'api/users' is valid for the request path '/api/users'
+2023-06-25 20:40:16.397 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)'
+2023-06-25 20:40:16.399 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:40:16.400 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:40:16.401 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:40:16.402 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)'
+2023-06-25 20:40:16.422 +02:00 [INF] Route matched with {action = "GetUserByIdAsync", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[MyDartsPredictor.Bll.Dtos.UserDto]] CreateUserAsync(MyDartsPredictor.Bll.SimplifiedDtos.UserCreate) on controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api).
+2023-06-25 20:40:16.424 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:40:16.425 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:40:16.426 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:40:16.428 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:40:16.429 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:40:16.431 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:40:16.432 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.UserController (MyDartsPredictor.Api)
+2023-06-25 20:40:16.446 +02:00 [DBG] Attempting to bind parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate' ...
+2023-06-25 20:40:16.451 +02:00 [DBG] Attempting to bind parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate' using the name '' in request data ...
+2023-06-25 20:40:16.454 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-06-25 20:40:16.470 +02:00 [DBG] Connection id "0HMRLL9TJPLV5", Request id "0HMRLL9TJPLV5:00000002": started reading request body.
+2023-06-25 20:40:16.472 +02:00 [DBG] Connection id "0HMRLL9TJPLV5", Request id "0HMRLL9TJPLV5:00000002": done reading request body.
+2023-06-25 20:40:16.482 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate'
+2023-06-25 20:40:16.484 +02:00 [DBG] Done attempting to bind parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate'.
+2023-06-25 20:40:16.486 +02:00 [DBG] Done attempting to bind parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate'.
+2023-06-25 20:40:16.487 +02:00 [DBG] Attempting to validate the bound parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate' ...
+2023-06-25 20:40:16.505 +02:00 [DBG] Done attempting to validate the bound parameter 'userDto' of type 'MyDartsPredictor.Bll.SimplifiedDtos.UserCreate'.
+2023-06-25 20:40:16.526 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:40:16.533 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:40:16.573 +02:00 [DBG] 'AppDbContext' generated temporary value '-2147482647' for the property 'Id.User'.
+2023-06-25 20:40:16.637 +02:00 [DBG] Context 'AppDbContext' started tracking 'User' entity with key '{Id: -2147482647}'.
+2023-06-25 20:40:16.646 +02:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2023-06-25 20:40:16.649 +02:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2023-06-25 20:40:16.661 +02:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2023-06-25 20:40:16.757 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:40:16.757 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:40:16.758 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:16.759 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:16.764 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:40:16.765 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-06-25 20:40:16.766 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (1ms).
+2023-06-25 20:40:16.767 +02:00 [DBG] Executing DbCommand [Parameters=[@p0='ltXVp2BPE4X3v91cJvA54P2d9Xi2' (Nullable = false), @p1='Pull UP' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("AuthUID", "Name")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2023-06-25 20:40:16.787 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[@p0='ltXVp2BPE4X3v91cJvA54P2d9Xi2' (Nullable = false), @p1='Pull UP' (Nullable = false)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("AuthUID", "Name")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2023-06-25 20:40:16.809 +02:00 [DBG] The foreign key property 'User.Id' was detected as changed from '-2147482647' to '5' for entity with key '{Id: 5}'.
+2023-06-25 20:40:16.817 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:16.820 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 30ms reading results.
+2023-06-25 20:40:16.822 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:16.823 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:40:16.839 +02:00 [DBG] The 'User' entity with key '{Id: 5}' tracked by 'AppDbContext' changed state from '"Added"' to '"Unchanged"'.
+2023-06-25 20:40:16.848 +02:00 [DBG] SaveChanges completed for 'AppDbContext' with 1 entities written to the database.
+2023-06-25 20:40:16.867 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 339.762ms.
+2023-06-25 20:40:16.869 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:40:16.872 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:40:16.872 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:40:16.873 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:40:16.874 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-06-25 20:40:16.875 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'MyDartsPredictor.Bll.Dtos.UserDto'.
+2023-06-25 20:40:16.895 +02:00 [DBG] Found the endpoints ["MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-06-25 20:40:16.904 +02:00 [DBG] Successfully processed template api/users for MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api) resulting in /api/users and ?userId=5
+2023-06-25 20:40:16.907 +02:00 [DBG] Link generation succeeded for endpoints ["MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)"] with result /api/users?userId=5
+2023-06-25 20:40:16.929 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api) in 497.9028ms
+2023-06-25 20:40:16.930 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.UserController.CreateUserAsync (MyDartsPredictor.Api)'
+2023-06-25 20:40:16.931 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" completed keep alive response.
+2023-06-25 20:40:16.932 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:40:16.933 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:16.934 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:40:16.935 +02:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5299/api/users application/json 18 - 201 - application/json;+charset=utf-8 543.5065ms
+2023-06-25 20:40:17.344 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" accepted.
+2023-06-25 20:40:17.346 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" started.
+2023-06-25 20:40:17.433 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/tournaments - -
+2023-06-25 20:40:17.434 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:40:17.434 +02:00 [DBG] The request path /api/tournaments does not match a supported file type
+2023-06-25 20:40:17.435 +02:00 [DBG] 1 candidate(s) found for the request path '/api/tournaments'
+2023-06-25 20:40:17.436 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)' with route pattern 'api/tournaments' is valid for the request path '/api/tournaments'
+2023-06-25 20:40:17.437 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:40:17.439 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:40:17.439 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:40:17.440 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:40:17.441 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:40:17.444 +02:00 [INF] Route matched with {action = "GetAllTournaments", controller = "Tournament"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTournaments() on controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api).
+2023-06-25 20:40:17.445 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:40:17.447 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:40:17.448 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:40:17.449 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:40:17.451 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:40:17.452 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:40:17.454 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:40:17.477 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:40:17.484 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:40:17.494 +02:00 [DBG] Compiling query expression: 
+'DbSet<Tournament>()
+    .Include(u => u.FounderUser)
+    .Include(u => u.UsersInTournament)
+    .ThenInclude(u => u.User)
+    .Include(p => p.Games)'
+2023-06-25 20:40:17.499 +02:00 [DBG] Including navigation: 'Tournament.FounderUser'.
+2023-06-25 20:40:17.501 +02:00 [DBG] Including navigation: 'Tournament.UsersInTournament'.
+2023-06-25 20:40:17.503 +02:00 [DBG] Including navigation: 'Tournament.Games'.
+2023-06-25 20:40:17.506 +02:00 [DBG] Including navigation: 'UsersInTournament.User'.
+2023-06-25 20:40:17.565 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-06-25 20:40:17.574 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Tournament>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Tournament.Id (TournamentId) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Tournament.FoundationTime (DateTime) Required, 1], [Property: Tournament.FounderUserId (int) Required FK Index, 2], [Property: Tournament.Name (string) Required, 3] }
+            1 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: User.AuthUID (string) Required Index, 5], [Property: User.Name (string) Required, 6] }
+            2 -> 0
+            3 -> 4
+            4 -> Dictionary<IProperty, int> { [Property: UsersInTournament.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 7], [Property: UsersInTournament.EarnedPoints (int) Required, 8], [Property: UsersInTournament.TournamentId (TournamentId) Required FK Index, 9], [Property: UsersInTournament.UserId (int) Required FK Index, 10] }
+            5 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: User.AuthUID (string) Required Index, 12], [Property: User.Name (string) Required, 13] }
+            6 -> 7
+            7 -> 11
+            8 -> Dictionary<IProperty, int> { [Property: Game.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 14], [Property: Game.MatchDate (DateWithTimeZone) Required, 15], [Property: Game.Player1Name (string) Required, 16], [Property: Game.Player2Name (string) Required, 17], [Property: Game.ResultId (int?), 18], [Property: Game.TournamentId (TournamentId) Required FK Index, 19] }
+            9 -> 14
+        SELECT t.Id, t.FoundationTime, t.FounderUserId, t.Name, u.Id, u.AuthUID, u.Name, t0.Id, t0.EarnedPoints, t0.TournamentId, t0.UserId, t0.Id0, t0.AuthUID, t0.Name, g.Id, g.MatchDate, g.Player1Name, g.Player2Name, g.ResultId, g.TournamentId
+        FROM Tournaments AS t
+        INNER JOIN Users AS u ON t.FounderUserId == u.Id
+        LEFT JOIN 
+        (
+            SELECT u0.Id, u0.EarnedPoints, u0.TournamentId, u0.UserId, u1.Id AS Id0, u1.AuthUID, u1.Name
+            FROM UsersInTournaments AS u0
+            INNER JOIN Users AS u1 ON u0.UserId == u1.Id
+        ) AS t0 ON t.Id == t0.TournamentId
+        LEFT JOIN Games AS g ON t.Id == g.TournamentId
+        ORDER BY t.Id ASC, u.Id ASC, t0.Id ASC, t0.Id0 ASC), 
+    ReaderColumn[] { ReaderColumn<int>, ReaderColumn<DateTime>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int> }, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Tournament>, 
+    AppDbContext, 
+    False, 
+    False, 
+    True
+)'
+2023-06-25 20:40:17.578 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:40:17.579 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:40:17.580 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:40:17.582 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-06-25 20:40:17.583 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2023-06-25 20:40:17.585 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:17.586 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:17.588 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id", u."AuthUID", u."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."AuthUID", t0."Name", g."Id", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+FROM "Tournaments" AS t
+INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t0 ON t."Id" = t0."TournamentId"
+LEFT JOIN "Games" AS g ON t."Id" = g."TournamentId"
+ORDER BY t."Id", u."Id", t0."Id", t0."Id0"
+2023-06-25 20:40:17.593 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id", u."AuthUID", u."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."AuthUID", t0."Name", g."Id", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+FROM "Tournaments" AS t
+INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t0 ON t."Id" = t0."TournamentId"
+LEFT JOIN "Games" AS g ON t."Id" = g."TournamentId"
+ORDER BY t."Id", u."Id", t0."Id", t0."Id0"
+2023-06-25 20:40:17.639 +02:00 [DBG] Context 'AppDbContext' started tracking 'Tournament' entity with key '{Id: TournamentId { Value = 1 }}'.
+2023-06-25 20:40:17.658 +02:00 [DBG] The navigation 'Tournament.FounderUser' for entity with key '{Id: TournamentId { Value = 1 }}' was detected as changed.
+2023-06-25 20:40:17.662 +02:00 [DBG] Context 'AppDbContext' started tracking 'User' entity with key '{Id: 1}'.
+2023-06-25 20:40:17.670 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:17.671 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 53ms reading results.
+2023-06-25 20:40:17.672 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:17.673 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:40:17.689 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 210.7442ms.
+2023-06-25 20:40:17.690 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:40:17.691 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:40:17.692 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:40:17.693 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:40:17.693 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-06-25 20:40:17.694 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyDartsPredictor.Bll.Dtos.TournamentDto, MyDartsPredictor.Bll, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-06-25 20:40:17.702 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api) in 249.5061ms
+2023-06-25 20:40:17.703 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:40:17.704 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" completed keep alive response.
+2023-06-25 20:40:17.704 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:40:17.705 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:17.706 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:40:17.707 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/tournaments - - - 200 - application/json;+charset=utf-8 274.4135ms
+2023-06-25 20:40:19.940 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" received FIN.
+2023-06-25 20:40:19.941 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" disconnecting.
+2023-06-25 20:40:19.948 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" sending FIN because: "The client closed the connection."
+2023-06-25 20:40:19.959 +02:00 [DBG] Connection id "0HMRLL9TJPLV5" stopped.
+2023-06-25 20:40:20.708 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" received FIN.
+2023-06-25 20:40:20.710 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" sending FIN because: "The client closed the connection."
+2023-06-25 20:40:20.711 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" disconnecting.
+2023-06-25 20:40:20.712 +02:00 [DBG] Connection id "0HMRLL9TJPLV6" stopped.
+2023-06-25 20:40:47.949 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" accepted.
+2023-06-25 20:40:47.950 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" started.
+2023-06-25 20:40:47.959 +02:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5299/api/tournaments/1/join application/json 15
+2023-06-25 20:40:47.960 +02:00 [DBG] POST requests are not supported
+2023-06-25 20:40:47.960 +02:00 [DBG] POST requests are not supported
+2023-06-25 20:40:47.961 +02:00 [DBG] 1 candidate(s) found for the request path '/api/tournaments/1/join'
+2023-06-25 20:40:47.962 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api)' with route pattern 'api/tournaments/{tournamentId}/join' is valid for the request path '/api/tournaments/1/join'
+2023-06-25 20:40:47.963 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api)'
+2023-06-25 20:40:47.965 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:40:47.965 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:40:47.966 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:40:47.967 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api)'
+2023-06-25 20:40:47.971 +02:00 [INF] Route matched with {action = "JoinPlayerToTournament", controller = "Tournament"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] JoinPlayerToTournament(MyDartsPredictor.Dal.Entities.TournamentId) on controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api).
+2023-06-25 20:40:47.973 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:40:47.974 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:40:47.976 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:40:47.977 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:40:47.978 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:40:47.980 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:40:47.981 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:40:47.983 +02:00 [DBG] Attempting to bind parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId' ...
+2023-06-25 20:40:47.984 +02:00 [DBG] Attempting to bind parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId' using the name 'tournamentId' in request data ...
+2023-06-25 20:40:47.985 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-06-25 20:40:47.994 +02:00 [DBG] Connection id "0HMRLL9TJPLV7", Request id "0HMRLL9TJPLV7:00000002": started reading request body.
+2023-06-25 20:40:47.995 +02:00 [DBG] Connection id "0HMRLL9TJPLV7", Request id "0HMRLL9TJPLV7:00000002": done reading request body.
+2023-06-25 20:40:48.004 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'MyDartsPredictor.Dal.Entities.TournamentId'
+2023-06-25 20:40:48.005 +02:00 [DBG] Done attempting to bind parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId'.
+2023-06-25 20:40:48.006 +02:00 [DBG] Done attempting to bind parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId'.
+2023-06-25 20:40:48.007 +02:00 [DBG] Attempting to validate the bound parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId' ...
+2023-06-25 20:40:48.009 +02:00 [DBG] Done attempting to validate the bound parameter 'tournamentId' of type 'MyDartsPredictor.Dal.Entities.TournamentId'.
+2023-06-25 20:40:48.028 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:40:48.033 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:40:48.035 +02:00 [DBG] Compiling query expression: 
+'DbSet<Tournament>()
+    .Include(f => f.FounderUser)
+    .Include(u => u.UsersInTournament)
+    .ThenInclude(u => u.User)
+    .FirstOrDefault(p => p.Id == __tournamentId_0)'
+2023-06-25 20:40:48.037 +02:00 [DBG] Including navigation: 'Tournament.FounderUser'.
+2023-06-25 20:40:48.038 +02:00 [DBG] Including navigation: 'Tournament.UsersInTournament'.
+2023-06-25 20:40:48.039 +02:00 [DBG] Including navigation: 'UsersInTournament.User'.
+2023-06-25 20:40:48.057 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Tournament>(
+    asyncEnumerable: new SingleQueryingEnumerable<Tournament>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Tournament.Id (TournamentId) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Tournament.FoundationTime (DateTime) Required, 1], [Property: Tournament.FounderUserId (int) Required FK Index, 2], [Property: Tournament.Name (string) Required, 3] }
+                1 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: User.AuthUID (string) Required Index, 5], [Property: User.Name (string) Required, 6] }
+                2 -> 0
+                3 -> 4
+                4 -> Dictionary<IProperty, int> { [Property: UsersInTournament.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 7], [Property: UsersInTournament.EarnedPoints (int) Required, 8], [Property: UsersInTournament.TournamentId (TournamentId) Required FK Index, 9], [Property: UsersInTournament.UserId (int) Required FK Index, 10] }
+                5 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: User.AuthUID (string) Required Index, 12], [Property: User.Name (string) Required, 13] }
+                6 -> 7
+                7 -> 11
+            SELECT t0.Id, t0.FoundationTime, t0.FounderUserId, t0.Name, t0.Id0, t0.AuthUID, t0.Name0, t1.Id, t1.EarnedPoints, t1.TournamentId, t1.UserId, t1.Id0, t1.AuthUID, t1.Name
+            FROM 
+            (
+                SELECT TOP(1) t.Id, t.FoundationTime, t.FounderUserId, t.Name, u.Id AS Id0, u.AuthUID, u.Name AS Name0
+                FROM Tournaments AS t
+                INNER JOIN Users AS u ON t.FounderUserId == u.Id
+                WHERE t.Id == @__tournamentId_0
+            ) AS t0
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.EarnedPoints, u0.TournamentId, u0.UserId, u1.Id AS Id0, u1.AuthUID, u1.Name
+                FROM UsersInTournaments AS u0
+                INNER JOIN Users AS u1 ON u0.UserId == u1.Id
+            ) AS t1 ON t0.Id == t1.TournamentId
+            ORDER BY t0.Id ASC, t0.Id0 ASC, t1.Id ASC), 
+        ReaderColumn[] { ReaderColumn<int>, ReaderColumn<DateTime>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<int>, ReaderColumn<object>, ReaderColumn<object> }, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Tournament>, 
+        AppDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-06-25 20:40:48.059 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:40:48.060 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:40:48.061 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:40:48.062 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-06-25 20:40:48.065 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-06-25 20:40:48.066 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:48.068 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:48.069 +02:00 [DBG] Executing DbCommand [Parameters=[@__tournamentId_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT t0."Id", t0."FoundationTime", t0."FounderUserId", t0."Name", t0."Id0", t0."AuthUID", t0."Name0", t1."Id", t1."EarnedPoints", t1."TournamentId", t1."UserId", t1."Id0", t1."AuthUID", t1."Name"
+FROM (
+    SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id" AS "Id0", u."AuthUID", u."Name" AS "Name0"
+    FROM "Tournaments" AS t
+    INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+    WHERE t."Id" = @__tournamentId_0
+    LIMIT 1
+) AS t0
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t1 ON t0."Id" = t1."TournamentId"
+ORDER BY t0."Id", t0."Id0", t1."Id"
+2023-06-25 20:40:48.079 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__tournamentId_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT t0."Id", t0."FoundationTime", t0."FounderUserId", t0."Name", t0."Id0", t0."AuthUID", t0."Name0", t1."Id", t1."EarnedPoints", t1."TournamentId", t1."UserId", t1."Id0", t1."AuthUID", t1."Name"
+FROM (
+    SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id" AS "Id0", u."AuthUID", u."Name" AS "Name0"
+    FROM "Tournaments" AS t
+    INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+    WHERE t."Id" = @__tournamentId_0
+    LIMIT 1
+) AS t0
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t1 ON t0."Id" = t1."TournamentId"
+ORDER BY t0."Id", t0."Id0", t1."Id"
+2023-06-25 20:40:48.081 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:48.083 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2023-06-25 20:40:48.084 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:40:48.085 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:40:48.298 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 269.4068ms.
+2023-06-25 20:40:48.300 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:40:48.301 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:40:48.302 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:40:48.303 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:40:48.303 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2023-06-25 20:40:48.304 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-06-25 20:40:48.305 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api) in 325.7265ms
+2023-06-25 20:40:48.307 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.JoinPlayerToTournament (MyDartsPredictor.Api)'
+2023-06-25 20:40:48.308 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" completed keep alive response.
+2023-06-25 20:40:48.309 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:40:48.309 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:40:48.310 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:40:48.312 +02:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5299/api/tournaments/1/join application/json 15 - 404 - text/plain;+charset=utf-8 352.7541ms
+2023-06-25 20:40:51.314 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" received FIN.
+2023-06-25 20:40:51.315 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" disconnecting.
+2023-06-25 20:40:51.322 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" sending FIN because: "The client closed the connection."
+2023-06-25 20:40:51.325 +02:00 [DBG] Connection id "0HMRLL9TJPLV7" stopped.
+2023-06-25 20:43:06.278 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" accepted.
+2023-06-25 20:43:06.279 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" started.
+2023-06-25 20:43:06.286 +02:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5299/api/tournaments - -
+2023-06-25 20:43:06.293 +02:00 [DBG] The request path  does not match the path filter
+2023-06-25 20:43:06.294 +02:00 [DBG] The request path /api/tournaments does not match a supported file type
+2023-06-25 20:43:06.295 +02:00 [DBG] 1 candidate(s) found for the request path '/api/tournaments'
+2023-06-25 20:43:06.296 +02:00 [DBG] Endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)' with route pattern 'api/tournaments' is valid for the request path '/api/tournaments'
+2023-06-25 20:43:06.297 +02:00 [DBG] Request matched endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:43:06.298 +02:00 [DBG] Successfully validated the token.
+2023-06-25 20:43:06.299 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-06-25 20:43:06.300 +02:00 [DBG] Authorization was successful.
+2023-06-25 20:43:06.300 +02:00 [INF] Executing endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:43:06.301 +02:00 [INF] Route matched with {action = "GetAllTournaments", controller = "Tournament"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTournaments() on controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api).
+2023-06-25 20:43:06.302 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-06-25 20:43:06.304 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-06-25 20:43:06.305 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-06-25 20:43:06.307 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-06-25 20:43:06.308 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-06-25 20:43:06.309 +02:00 [DBG] Executing controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:43:06.311 +02:00 [DBG] Executed controller factory for controller MyDartsPredictor.Api.Controllers.TournamentController (MyDartsPredictor.Api)
+2023-06-25 20:43:06.328 +02:00 [INF] Executing action method MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api) - Validation state: "Valid"
+2023-06-25 20:43:06.329 +02:00 [DBG] Entity Framework Core 7.0.5 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.4+96806371445869d20be357993820cd4be366e145' with options: SensitiveDataLoggingEnabled 
+2023-06-25 20:43:06.331 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-06-25 20:43:06.332 +02:00 [DBG] Creating DbConnection.
+2023-06-25 20:43:06.333 +02:00 [DBG] Created DbConnection. (0ms).
+2023-06-25 20:43:06.334 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-06-25 20:43:06.335 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-06-25 20:43:06.336 +02:00 [DBG] Opening connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:43:06.383 +02:00 [DBG] Opened connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:43:06.385 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id", u."AuthUID", u."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."AuthUID", t0."Name", g."Id", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+FROM "Tournaments" AS t
+INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t0 ON t."Id" = t0."TournamentId"
+LEFT JOIN "Games" AS g ON t."Id" = g."TournamentId"
+ORDER BY t."Id", u."Id", t0."Id", t0."Id0"
+2023-06-25 20:43:06.396 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."FoundationTime", t."FounderUserId", t."Name", u."Id", u."AuthUID", u."Name", t0."Id", t0."EarnedPoints", t0."TournamentId", t0."UserId", t0."Id0", t0."AuthUID", t0."Name", g."Id", g."MatchDate", g."Player1Name", g."Player2Name", g."ResultId", g."TournamentId"
+FROM "Tournaments" AS t
+INNER JOIN "Users" AS u ON t."FounderUserId" = u."Id"
+LEFT JOIN (
+    SELECT u0."Id", u0."EarnedPoints", u0."TournamentId", u0."UserId", u1."Id" AS "Id0", u1."AuthUID", u1."Name"
+    FROM "UsersInTournaments" AS u0
+    INNER JOIN "Users" AS u1 ON u0."UserId" = u1."Id"
+) AS t0 ON t."Id" = t0."TournamentId"
+LEFT JOIN "Games" AS g ON t."Id" = g."TournamentId"
+ORDER BY t."Id", u."Id", t0."Id", t0."Id0"
+2023-06-25 20:43:06.398 +02:00 [DBG] Context 'AppDbContext' started tracking 'Tournament' entity with key '{Id: TournamentId { Value = 1 }}'.
+2023-06-25 20:43:06.399 +02:00 [DBG] The navigation 'Tournament.FounderUser' for entity with key '{Id: TournamentId { Value = 1 }}' was detected as changed.
+2023-06-25 20:43:06.401 +02:00 [DBG] Context 'AppDbContext' started tracking 'User' entity with key '{Id: 1}'.
+2023-06-25 20:43:06.402 +02:00 [DBG] Closing data reader to 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:43:06.403 +02:00 [DBG] A data reader for 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2023-06-25 20:43:06.405 +02:00 [DBG] Closing connection to database 'MyDartsPredictorDatabase' on server 'tcp://localhost:5432'.
+2023-06-25 20:43:06.406 +02:00 [DBG] Closed connection to database 'MyDartsPredictorDatabase' on server '' (1ms).
+2023-06-25 20:43:06.407 +02:00 [INF] Executed action method MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 78.3459ms.
+2023-06-25 20:43:06.408 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-06-25 20:43:06.410 +02:00 [DBG] No information found on request to perform content negotiation.
+2023-06-25 20:43:06.411 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-06-25 20:43:06.411 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-06-25 20:43:06.412 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-06-25 20:43:06.413 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyDartsPredictor.Bll.Dtos.TournamentDto, MyDartsPredictor.Bll, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-06-25 20:43:06.414 +02:00 [INF] Executed action MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api) in 105.2895ms
+2023-06-25 20:43:06.416 +02:00 [INF] Executed endpoint 'MyDartsPredictor.Api.Controllers.TournamentController.GetAllTournaments (MyDartsPredictor.Api)'
+2023-06-25 20:43:06.417 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" completed keep alive response.
+2023-06-25 20:43:06.418 +02:00 [DBG] 'AppDbContext' disposed.
+2023-06-25 20:43:06.419 +02:00 [DBG] Disposing connection to database 'MyDartsPredictorDatabase' on server ''.
+2023-06-25 20:43:06.419 +02:00 [DBG] Disposed connection to database 'MyDartsPredictorDatabase' on server '' (0ms).
+2023-06-25 20:43:06.421 +02:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5299/api/tournaments - - - 200 - application/json;+charset=utf-8 134.9712ms
+2023-06-25 20:43:09.423 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" received FIN.
+2023-06-25 20:43:09.424 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" disconnecting.
+2023-06-25 20:43:09.433 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" sending FIN because: "The client closed the connection."
+2023-06-25 20:43:09.441 +02:00 [DBG] Connection id "0HMRLL9TJPLV8" stopped.
+2023-06-25 20:54:45.765 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-06-25 20:54:46.091 +02:00 [DBG] Hosting starting
+2023-06-25 20:54:46.156 +02:00 [INF] User profile is available. Using 'C:\Users\Galuska Zoltán\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-25 20:54:46.164 +02:00 [DBG] Reading data from file 'C:\Users\Galuska Zoltán\AppData\Local\ASP.NET\DataProtection-Keys\key-6617b85d-6bae-4c17-9697-4d7715bc827d.xml'.
+2023-06-25 20:54:46.189 +02:00 [DBG] Found key {6617b85d-6bae-4c17-9697-4d7715bc827d}.
+2023-06-25 20:54:46.211 +02:00 [DBG] Considering key {6617b85d-6bae-4c17-9697-4d7715bc827d} with expiration date 2023-07-12 20:08:25Z as default key.
+2023-06-25 20:54:46.218 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-06-25 20:54:46.228 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-06-25 20:54:46.232 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-06-25 20:54:46.245 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-06-25 20:54:46.249 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-06-25 20:54:46.254 +02:00 [DBG] Using key {6617b85d-6bae-4c17-9697-4d7715bc827d} as the default key.
+2023-06-25 20:54:46.255 +02:00 [DBG] Key ring with default key {6617b85d-6bae-4c17-9697-4d7715bc827d} was loaded during application startup.
+2023-06-25 20:54:46.463 +02:00 [INF] Now listening on: http://localhost:5299
+2023-06-25 20:54:46.464 +02:00 [DBG] Loaded hosting startup assembly MyDartsPredictor.Api
+2023-06-25 20:54:46.465 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-06-25 20:54:46.466 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-06-25 20:54:46.468 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-25 20:54:46.470 +02:00 [INF] Hosting environment: Development
+2023-06-25 20:54:46.471 +02:00 [INF] Content root path: C:\Programozas\dotnet\MyDartsPredictor\MyDartsPredictor.Api\
+2023-06-25 20:54:46.472 +02:00 [DBG] Hosting started
+2023-06-25 20:54:46.856 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" received FIN.
+2023-06-25 20:54:46.856 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" received FIN.
+2023-06-25 20:54:46.875 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" accepted.
+2023-06-25 20:54:46.875 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" accepted.
+2023-06-25 20:54:46.878 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" started.
+2023-06-25 20:54:46.878 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" started.
+2023-06-25 20:54:46.897 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" sending FIN because: "The client closed the connection."
+2023-06-25 20:54:46.897 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" sending FIN because: "The client closed the connection."
+2023-06-25 20:54:46.903 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" disconnecting.
+2023-06-25 20:54:46.904 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" disconnecting.
+2023-06-25 20:54:46.929 +02:00 [DBG] Connection id "0HMRLLMIN3I3O" stopped.
+2023-06-25 20:54:46.929 +02:00 [DBG] Connection id "0HMRLLMIN3I3N" stopped.
+2023-06-25 20:54:47.248 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" accepted.
+2023-06-25 20:54:47.249 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" started.
+2023-06-25 20:54:47.255 +02:00 [DBG] Connection id "0HMRLLMIN3I3Q" accepted.
+2023-06-25 20:54:47.256 +02:00 [DBG] Connection id "0HMRLLMIN3I3Q" started.
+2023-06-25 20:54:47.312 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/swagger/index.html - -
+2023-06-25 20:54:47.372 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-06-25 20:54:47.669 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-06-25 20:54:47.859 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-06-25 20:54:47.860 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" completed keep alive response.
+2023-06-25 20:54:47.864 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/swagger/index.html - - - 200 - text/html;charset=utf-8 559.2921ms
+2023-06-25 20:54:47.889 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/_framework/aspnetcore-browser-refresh.js - -
+2023-06-25 20:54:47.893 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" completed keep alive response.
+2023-06-25 20:54:47.895 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/_framework/aspnetcore-browser-refresh.js - - - 200 12010 application/javascript;+charset=utf-8 5.6924ms
+2023-06-25 20:54:47.998 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/_vs/browserLink - -
+2023-06-25 20:54:48.068 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" completed keep alive response.
+2023-06-25 20:54:48.069 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 71.2770ms
+2023-06-25 20:54:48.140 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5299/swagger/v1/swagger.json - -
+2023-06-25 20:54:48.283 +02:00 [DBG] Connection id "0HMRLLMIN3I3P" completed keep alive response.
+2023-06-25 20:54:48.285 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5299/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 144.9426ms

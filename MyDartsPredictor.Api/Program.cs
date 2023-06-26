@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using MyDartsPredictor.Bll.Dtos;
 using MyDartsPredictor.Bll.Interfaces;
 using MyDartsPredictor.Bll.Services;
+using Serilog;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,21 @@ builder.Services.AddDbContext<AppDbContext>(options =>
             opt.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(5), errorCodesToAdd: null));
     }
 );
+
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<AppDbContext>();
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("logs/logging.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger(); ;
+
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.ClearProviders();
+    loggingBuilder.AddSerilog();
+});
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<ITournamentService, TournamentService>();
@@ -77,13 +93,11 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 });
 var app = builder.Build();
+app.MapHealthChecks("/healthz");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseStaticFiles();
 
